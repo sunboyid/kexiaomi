@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script src="../js/jquery-3.0.0.min.js"></script>
+	<script>
+		$(function() {
+			$.ajax({
+				type:'get',
+				url:'http://www.kexiaomi.com/api/tech/search-tech',
+				dataType:'jsonp',
+				success:function(data) {
+					console.log(data);
+				}
+			})
+		})
+	</script>
+</body>
+</html>

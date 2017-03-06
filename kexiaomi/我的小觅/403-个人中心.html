@@ -1,0 +1,130 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>个人中心</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script>
+    document.getElementsByTagName("html")[0].style.fontSize = document.documentElement.clientWidth / 15 + "px";
+    </script>
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../font/iconfont.css">
+    <link rel="stylesheet" href="../css/m-personal.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+<div class="content">
+    <div class="jz">努力加载中...</div>
+</div>
+</body>
+</html>
+<script src="../js/zepto.min.js"></script>
+<script src="../js/template-native.js"></script>
+<script>
+$(function() {
+    $.ajax({
+        type: 'get',
+        url: 'http://kexiaomi.com/api/my/info',
+        dataType: 'jsonp',
+        success: function(data) {
+            console.log(data);
+            var personal = template('personal',data);
+            $('.content').html(personal);
+            if(data.ret.is_member) {
+                $('.member').html('VIP');
+            }else {
+                $('.member').remove();
+            }
+            if(data.ret.is_authed) {
+            	$('.yz').html('已验证');
+            }else {
+            	$('.yz').html('未验证');
+            }
+        }
+    })
+})
+</script>
+<script type="text/html" id="personal">
+<header id="header">
+    <div class="head-main">
+        <img src="<%=ret.photo_path%>" alt="">
+        <div class="head-msg">
+            <div class="name"><%=ret.name%><span class="member"></span></div>
+            <div class="jf">积分<span><%=ret.score_left%></span></div>
+            <div class="org"><%=ret.department%><span class="yz"></span></div>
+        </div>
+        <a href="403-1-我的资料.html" class="head-tit">修改资料</a>
+    </div>
+</header>
+    <a href="403-1-mymsg.html">
+        <section class="my-zl">
+            <img src="../imgs/person-msg.png" alt="">
+            <span>我的资料</span>
+            <a href="#"><img src="../imgs/xx.png" alt="" class="gt"></a>
+        </section>
+    </a>
+    <a href="403-2-record.html">
+        <section class="my-xf">
+            <i class="iconfont icon-1111136"></i>
+            <span>消费记录</span>
+            <a href="#"><img src="../imgs/xx.png" alt="" class="gt"></a>
+        </section>
+    </a>
+    <a href="403-3-myorder.html">
+        <section class="my-xf">
+            <i class="iconfont icon-wodezixundingdan"></i>
+            <span>我的订单</span>
+            <a href="#"><img src="../imgs/xx.png" alt="" class="gt"></a>
+        </section>
+    </a>
+    <a href="403-4-visit.html">
+        <section class="my-xf">
+            <i class="iconfont icon-yaoqingpengyou"></i>
+            <span>邀请朋友</span>
+            <a href="#"><img src="../imgs/xx.png" alt="" class="gt"></a>
+        </section>
+    </a>
+    <a href="404-respond.html">
+        <section class="my-xf">
+            <i class="iconfont icon-tel"></i>
+            <span>联系客服</span>
+            <a href="#"><img src="../imgs/xx.png" alt="" class="gt"></a>
+        </section>
+    </a>
+</script> -->
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>javascript移除百度地图LOGO和版权信息</title>
+    <script type="text/javascript" src="../js/jquery-3.0.0.min.js"></script>
+    <script src="http://api.map.baidu.com/api?v=1.3" type="text/javascript"></script>
+    <script type="text/javascript">
+        function dddd() {
+            var mp = new BMap.Map('map');
+            var nowCity = new BMap.LocalCity();
+            console.log(nowCity);
+            mp.centerAndZoom(new BMap.Point(), 11);
+        }
+        window.onload = dddd;
+    </script>
+    <style type="text/css"> 
+/*.anchorBL{ 
+    display:none; 
+} */
+</style> 
+</head>
+
+<body>
+    <input type="button" onclick="$('#map div.anchorBL').hide();" value="移除地图LOGO和版权说明"/> 
+    <input type="button" onclick="$('#map div.anchorBL').show();" value="移除地图LOGO和版权说明"/> 
+<div id="map" style="width:1000px;height:400px"></div> 
+</body>
+
+</html>

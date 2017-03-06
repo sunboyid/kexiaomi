@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>相关专业</title>
+    <script>
+    document.getElementsByTagName("html")[0].style.fontSize = document.documentElement.clientWidth / 15 + "px";
+    </script>
+    <link rel="stylesheet" type="text/css" href="../css/public.css" />
+    <link rel="stylesheet" type="text/css" href="../css/j-major.css" />
+    <style type="text/css">
+        .tk,
+    .tk-cont {
+        display: none;
+    }
+.tk {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.tk-cont {
+    top: 8rem;
+    left: 50%;
+    width: 11rem;
+    position: fixed;
+    background: #fff;
+    text-align: center;
+    margin-left: -5.5rem;
+}
+.tk-txt {
+    color: #656f8a;
+    font-size: 0.7rem;
+    padding: 1rem 0.5rem;
+    border: 1px solid #f1f1f1;
+}
+
+.tk-cont button {
+    color: #fff;
+    margin: 0.5rem 0;
+    font-size: 0.7rem;
+    background: #6ae489;
+    padding: 0.2rem 0.5rem;
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="prompt"><span class="name"></span>的相关专利包括</div>
+    <ul class="nav clear">
+        <li>
+            <span>专利权人</span>
+            <img src="../imgs/j-t-arrow.png" alt="" />
+        </li>
+        <li>
+            <span>发明人</span>
+            <img src="../imgs/j-t-arrow.png" alt="" />
+        </li>
+        <li>
+            <span>状态时间</span>
+            <img src="../imgs/j-t-arrow.png" alt="" />
+        </li>
+    </ul>
+    <div class="content">
+        <div class="jz">努力加载中...</div>
+    </div>
+    <footer class="clear">
+        <a class="fl favo" href="../我的小觅/401-收藏-2.html">收藏夹</a>
+        <input class="fr sub" type="submit" value="购买详细技术分析报告" />
+    </footer>
+    <div class="tk"></div>
+    <div class="tk-cont">
+        <div class="tk-txt">
+            感谢你的使用，客服将在24小时内联系你，为你介绍咨费情况及服务内容！
+        </div>
+        <button>知道了</button>
+    </div>
+</body>
+
+</html>
+<script type="text/javascript" src="../js/zepto.min.js"></script>
+<script src="../js/touch.js"></script>
+<script src="../js/template-native.js"></script>
+<script src="../js/j-major.js"></script>
+<script type="text/javascript">
+
+</script>
+<script type="text/html" id="major">
+    <%for(var i = 0;i < ret.length;i++) {%>
+        <div class="c-list">
+            <div class="patent-name clear">
+                <div class="fl">
+                    <%=ret[i].title%>
+                </div>
+                <span class="fr shc">收藏</span>
+            </div>
+            <div class="p-info">
+                <div class="clear">
+                    <div class="fl">发明人</div>
+                    <div class="fr">
+                        <%=ret[i].originator%>
+                    </div>
+                </div>
+                <div class="clear">
+                    <div class="fl">专利权人</div>
+                    <div class="fr">
+                        <%=ret[i].owner%>
+                    </div>
+                </div>
+                <div class="clear">
+                    <div class="fl">状态</div>
+                    <div class="fr">
+                        <span><%=ret[i].status%></span>
+                    </div>
+                </div>
+            </div>
+            <div class="list-bot clear">
+                <a class="fr zy" href="javascript:;">我要转移</a>
+            </div>
+        </div>
+    <%}%>
+</script>

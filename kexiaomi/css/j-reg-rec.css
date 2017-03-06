@@ -1,0 +1,95 @@
+
+
+body{
+    background:#f9f8f9;
+}
+.tit{
+    color:#656f8a;
+    font-size:0.6rem;
+    padding:0.5rem 0;
+}
+ .lx {
+    color:#656f8a;
+    font-size:0.6rem;
+}
+.l-line{
+    width:0.1rem;
+    height:0.6rem;
+    margin-right:0.4rem;
+    background:#6ae489;
+    display:inline-block;
+    vertical-align:middle;
+}
+.userType{
+    color:#656f8a;
+    padding: 0.3rem 0.5rem;
+    background:#fff;
+    font-size:0.5rem;
+}
+.userType a{
+    width:3rem;
+    line-height:1rem;
+    text-align:center;
+    border-radius:1rem;
+    margin-right:0.5rem;
+    display:inline-block;
+    border:1px solid #656f8a;
+}
+.userType .cur{
+    color:#fff;
+    background:#6ae489;
+    border:1px solid #6ae489;
+}
+.f-top{
+    padding:0 0.5rem;
+}
+.text{
+    color:#6ae489;
+    font-size:0.5rem;
+    padding:0.4rem 0;
+}
+.f-top input{
+    width:94%;
+    height:1.4rem;
+    padding:0 3%;
+    border:1px solid #ebf0f4;
+}
+.password{
+    margin-top:0.5rem;
+}
+.f-bot{
+    padding:0 0.5rem;
+}
+.f-bot input{
+    width:94%;
+    padding:0 3%;
+    height:1.4rem;
+    margin-bottom:0.5rem;
+    border:1px solid #ebf0f4;
+}
+.f-bot>div{
+    margin-bottom:0.5rem;
+}
+.f-bot .tel{
+    width:62%;
+    margin:0;
+}
+.f-bot .get-yzm{
+    width:28%;
+    color:#6ae489;
+    background:#fff;
+    font-size:0.5rem;
+    text-align:center;
+    line-height:1.4rem;
+    border:1px solid #6ae489;
+}
+.sub{
+    width:100%;
+    color:#FFF;
+    bottom:0;
+    text-align: center;
+    line-height:1.5rem;
+    position:fixed;
+    font-size:0.7rem;
+    background:#6ae489;
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>相关技术</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script>
+    document.getElementsByTagName("html")[0].style.fontSize = document.documentElement.clientWidth / 15 + "px";
+    </script>
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../laypage/skin/laypage.css">
+    <link rel="stylesheet" href="../fonts/iconfont.css">
+    <link rel="stylesheet" href="../css/tec-rel.css">
+    <style>
+    .nr {
+        display: none;
+    }
+    
+    .add {
+        font-size: 0.5rem;
+        text-align: center;
+        margin-top: 50%;
+    }
+    
+    #page {
+        margin-bottom: 3rem;
+    }
+    </style>
+</head>
+<header id="header">
+    <div>
+        <input type="text" placeholder="技术关键字" class="txt">
+        <input type="button" value="发现科技" class="btn">
+    </div>
+</header>
+<div class="tec-title">您感兴趣的技术、产品: 等离子, 有如下相关技术</div>
+<div class="content">
+    <div class="jz">努力加载中...</div>
+    <div class="nr">没有相关信息</div>
+</div>
+<div id="page"></div>
+<footer class="clear">
+    <a class="fl favo" href="../我的小觅/401-收藏-2.html">收藏夹</a>
+    <input class="fr sub" type="submit" value="购买详细技术分析报告（5000元）" />
+</footer>
+<script src="../js/zepto.min.js"></script>
+<script src="../js/touch.js"></script>
+<script src="../js/template-native.js"></script>
+<script src="../laypage/laypage.js"></script>
+<script src="../js/tec-rel.js"></script>
+<script type="text/html" id="tec-rel">
+    <%for(var i = 0;i < items.length;i++) {%>
+        <section class="patent">
+            <div class="patent-contain">
+                <div class="contain-head">
+                    <span><%=items[i].keywords%></span>
+                    <a href="javascript:;" class="sc">收藏</a>
+                </div>
+                <div class="contain-mid">
+                    <p>技术在研者 <span class="name"><%=items[i].main_researcher_name%></span>&nbsp;&nbsp;&nbsp;&nbsp;<a href="305-searchres.html" class="more">更多》</a></p>
+                    <p>主要机构&nbsp;&nbsp;&nbsp;&nbsp;<span><%=items[i].department%></span></p>
+                    <p>行业关注度
+                        <span>
+                    <%if(items[i].hot_result == 0) {%>
+                        <i class="iconfont icon-wujiaoxingkong"></i>
+                        <i class="iconfont icon-wujiaoxingkong"></i>
+                        <i class="iconfont icon-wujiaoxingkong"></i>
+                        <i class="iconfont icon-wujiaoxingkong"></i>
+                    <%}else if(items[i].hot_result > 0&&items[i].hot_result <=0.2){%>
+                        <i class="iconfont icon-wujiaoxing-copy"></i>
+                        <i class="iconfont icon-wujiaoxingkong"></i>
+                        <i class="iconfont icon-wujiaoxingkong"></i>
+                        <i class="iconfont icon-wujiaoxingkong"></i>
+                        <i class="iconfont icon-wujiaoxingkong"></i>
+                    <%}else if(items[i].hot_result > 0.2&&items[i].hot_result <=0.4){%>
+                        <i class="iconfont icon-wujiaoxing-copy"></i>
+                        <i class="iconfont icon-wujiaoxing-copy"></i>
+                        <i class="iconfont icon-wujiaoxingkong"></i>
+                        <i class="iconfont icon-wujiaoxingkong"></i>
+                        <i class="iconfont icon-wujiaoxingkong"></i>
+                    <%}else if(items[i].hot_result > 0.4&&items[i].hot_result <=0.6){%>
+                        <i class="iconfont icon-wujiaoxing-copy"></i>
+                        <i class="iconfont icon-wujiaoxing-copy"></i>
+                        <i class="iconfont icon-wujiaoxing-copy"></i>
+                        <i class="iconfont icon-wujiaoxingkong"></i>
+                        <i class="iconfont icon-wujiaoxingkong"></i>
+                    <%}else if(items[i].hot_result > 0.6&&items[i].hot_result <=0.8){%>
+                        <i class="iconfont icon-wujiaoxing-copy"></i>
+                        <i class="iconfont icon-wujiaoxing-copy"></i>
+                        <i class="iconfont icon-wujiaoxing-copy"></i>
+                        <i class="iconfont icon-wujiaoxing-copy"></i>
+                        <i class="iconfont icon-wujiaoxingkong"></i>
+                    <%}else if(items[i].hot_result > 0.8&&items[i].hot_result <=1.0){%>
+                        <i class="iconfont icon-wujiaoxing-copy"></i>
+                        <i class="iconfont icon-wujiaoxing-copy"></i>
+                        <i class="iconfont icon-wujiaoxing-copy"></i>
+                        <i class="iconfont icon-wujiaoxing-copy"></i>
+                        <i class="iconfont icon-wujiaoxing-copy"></i>
+                    <%}%>
+                    </span>
+                    </p>
+                </div>
+                <div class="contain-bottom">
+                    <a href="javascript:;" class="inp-patent">相关专利 (<%=items[i].patent_num%>)</a>
+                    <a href="javascript:;" class="inp-tec">技术难点</a>
+                </div>
+            </div>
+        </section>
+        <%}%>
+</script>
+
+</html>

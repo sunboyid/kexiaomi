@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>感兴趣</title>
+    <script>
+    document.getElementsByTagName("html")[0].style.fontSize = document.documentElement.clientWidth / 15 + "px";
+    </script>
+    <link rel="stylesheet" type="text/css" href="../css/public.css" />
+    <link rel="stylesheet" type="text/css" href="../css/j-interest.css" />
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>
+    <div class="head">
+        <div class="clear head-cont">
+            <a href="210-精品推荐.html" class="fl">精选推荐</a>
+            <a href="212-感兴趣.html" class="fr cur">我感兴趣</a>
+        </div>
+    </div>
+    <img src="" alt="">
+    <div class="prompt">为您推荐如下已审核的企业需求</div>
+    <div class="content">
+        <div class="jz">努力加载中...</div>
+    </div>
+</body>
+
+</html>
+<script src="../js/zepto.min.js"></script>
+<script src="../js/touch.js"></script>
+<script src="../js/template-native.js"></script>
+<script>
+$(function() {
+    $.ajax({
+        type: 'get',
+        url: 'http://kexiaomi.com/api/wechat/myinterest',
+        dataType: 'jsonp',
+        success: function(data) {
+            console.log(data);
+            var myInterest = template('myinterest', data);
+            $('.content').html(myInterest);
+            $('.content .list').each(function(index, ele) {
+                $(ele).on('tap','.del', function() {
+                    $(ele).remove();
+                })
+            })
+        }
+    })
+})
+</script>
+<script type="text/html" id="myinterest">
+    <%for(var i = 0;i < ret.length;i++) {%>
+        <div class="list">
+            <a href="211-需求详情-研究者.html?id=<%=ret[i].rq_id%>">
+                <div class="clear tit">
+                    <div class="fl">
+                        <%=ret[i].title%>
+                    </div>
+                    <div class="fr num">2</div>
+                </div>
+                <div class="clear info">
+                    <div class="fl">
+                        创建人 <span class="name"><%=ret[i].creator%></span>
+                    </div>
+                    <div class="fr">
+                        更新时间 <span><%=ret[i].u_time%></span>
+                    </div>
+                </div>
+                <div class="state">
+                    解决方式 &nbsp;
+                    <%for(var j = 0;j < ret[i].do_way.length;j++) {%>
+                        <span><%=ret[i].do_way[j]%></span> &nbsp;
+                    <%}%>
+                </div>
+            </a>
+            <div class="operation clear">
+                <div class="fr del">删除</div>
+            </div>
+        </div>
+    <%}%>
+</script>

@@ -1,0 +1,131 @@
+body {
+    background-color: #69e489;
+}
+
+#header {
+    padding-left: 3rem;
+    padding-top: 2rem;
+}
+
+#header img {
+    width: 5rem;
+    height: 1.5rem;
+}
+#header span {
+    display: inline-block;
+    line-height: 1.5rem;
+    vertical-align: top;
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-align: center;
+}
+section {
+    /*padding-top: 0.2rem;*/
+    margin: 1rem auto;
+    width: 11.88rem;
+    background-color: #69e489;
+}
+
+section div {
+    width: 100%;
+    height: 1.8rem;
+    border-bottom: 1px solid #fff;
+    box-sizing: border-box;
+}
+
+section .pub {
+    padding-left: 10%;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+section input {
+    width: 100%;
+    height: 1.66rem;
+    font-size: 0.7rem;
+    color: #fff;
+    background-color: #69e489;
+}
+
+input::-webkit-input-placeholder {
+    color: #fff;
+}
+
+input::-moz-placeholder {
+    color: #fff;
+}
+
+input::-ms-input-placeholder {
+    color: #fff;
+}
+
+.ent-msg {
+    text-align: center;
+    font-size: 0.4rem;
+    color: #fff;
+    border: 0 none;
+}
+
+.ent {
+    background-color: #fff;
+    border-radius: 0.8rem;
+    line-height: 1.6rem;
+    text-align: center;
+    margin-bottom: 1rem
+}
+
+.ent a {
+    font-size: 0.64rem;
+    color: #69e489;
+}
+
+.register {
+    background-color: #69e489;
+    border: 1px solid #fff;
+}
+
+.register a {
+    color: #fff;
+}
+
+.paw {
+    text-align: center;
+    border: 0 none;
+}
+
+.paw a {
+    font-size: 0.64rem;
+    color: #fff;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 1.94rem;
+    line-height: 1.94rem;
+    background-color: #fff;
+}
+
+footer a {
+    text-align: center;
+    font-size: 0.5rem;
+    color: #69e489;
+}
+
+footer span {
+    color: #69e489;
+}
+
+.pub .pic {
+    position: absolute;
+    left: 0;
+    width: 0.6rem;
+    top: 0.1rem;
+    border: 0 none;
+}
+
+.pub img {
+    height: 0.6rem;
+}

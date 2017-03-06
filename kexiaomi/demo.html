@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.father {
+			display: flex;
+			/*justify-content: center;*/
+			align-items: center;
+			/*flex-direction: column;*/
+			flex-wrap: wrap;
+			width: 200px;
+			height: 200px;
+			background-color: pink;
+		}
+		.son {
+			flex: 1;
+			margin: 10px;
+			width: 50px;
+			height: 50px;
+			background-color: rgb(255,255,0);
+		}
+
+		.two {
+			flex: 2;
+		}
+		.three {
+			flex: 2;
+		}
+
+		.four {
+			flex: 3;
+		}
+		.one {
+			width: 50px;
+			height: 50px;
+			background-color: blue;
+			margin: 10px;
+		}
+	</style>
+</head>
+<body>
+<a href="demo2.html?key=123">dddd</a>
+	<div class="father">
+		<div class="son"></div>
+		<div class="son"></div>
+		<div class="son"></div>
+		<div class="son"></div>
+		<div class="son two"></div>
+		<div class="son three"></div>
+		<div class="son four"></div>
+	</div>
+	<div class="one"></div>
+	<div class="one"></div>
+	<div class="one"></div>
+	<script>
+	// console.log(window.location.search);
+		var one = window.localStorage;
+
+		one.setItem('name',"zhangsan");
+		console.log(one.getItem('name'));
+	</script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>需求详情</title>
+<script>
+    document.getElementsByTagName("html")[0].style.fontSize=document.documentElement.clientWidth/15+"px";
+</script>
+<link rel="stylesheet" type="text/css" href="../css/public.css" />
+<link rel="stylesheet" type="text/css" href="../css/sm.min.css" />
+<link rel="stylesheet" type="text/css" href="../css/j-xuqiu-details.css" />
+<style type="text/css">
+    .jz {
+        margin-top: 50%;
+        text-align: center;
+        font-size: 0.5rem;
+    }
+</style>
+</head>
+<body>
+<div class="page-group">
+    <div class="page">
+        <div class="content">
+            <header class="clear head">
+                <a external href="206-1-需求详情.html" class="cur">需求信息</a>
+                <a external href="210-2-推荐研究者.html">推荐</a>
+                <a external href="javascript:;" class="respond">响应</a>
+            </header>
+            <form action="">
+                <div class="jz">努力加载中...</div>
+            </form>
+
+            <footer class="clear">
+                <a external class="fl favo" href="202-新建需求.html">修改</a>
+                <input class="fr sub" type="submit" value="免费推荐研究者" />
+            </footer>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script type="text/javascript" src="../js/jquery-3.0.0.min.js"></script>
+<script src="../js/jquery.cookie.js"></script>
+<script src="../js/template-native.js"></script>
+<script src="../js/xqxq-1.js"></script>
+<script type="text/html" id="xq-detail">
+    
+    <div class="c-top">
+        <div class="f-tit"><%=ret.title%></div>
+        <div class="x-cont">
+            <div class="cont-list"><%=ret.content%></div>
+        </div>
+        <div class="searchTime">
+            有效时间 <span><%=ret.deadline%></span>   
+        </div>
+        <div class="clear txt">
+            <img src="../imgs/j-shm-icon.png" alt="" class="fl" />
+            <div class="fr shm-info">截止时间过后您的需求将停止推荐给研究者。</div>
+        </div>
+    </div>
+</script>

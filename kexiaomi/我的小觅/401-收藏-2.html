@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>收藏夹1</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script>
+    document.getElementsByTagName("html")[0].style.fontSize = document.documentElement.clientWidth / 15 + "px";
+    </script>
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../fonts/iconfont.css">
+    <link rel="stylesheet" href="../css/m-save-2.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <div class="head-til">
+            <div class="res-left"><a href="401-收藏-1.html">研究者</a></div>
+            <div class="tec-right"><a href="#">技术分析</a></div>
+        </div>
+    </header>
+    <div class="content">
+        <div class="jz">努力加载中...</div>
+    </div>
+    <script src="../js/zepto.min.js"></script>
+    <script src="../js/touch.js"></script>
+    <script src="../js/template-native.js"></script>
+    <script>
+    $(function() {
+        $.ajax({
+            type: 'get',
+            url: 'http://kexiaomi.com/api/my/tech',
+            dataType: 'jsonp',
+            success: function(data) {
+                console.log(data);
+                var shc = template('shc2',data);
+                $('.content').html(shc);
+                   $('section').each(function(index, ele) {
+                    $(ele).on('tap', '.sc', function() {
+                        var opt = data.ret[index].department;
+                        var mz = $(this).siblings().text();
+                        $(this).parents('.patent').remove();
+                        $.ajax({
+                            type: 'get',
+                            url: 'http://kexiaomi.com/api/tech/collect-tech?name=' + mz +'&opt='+opt,
+                            dataType: 'jsonp',
+                            success: function(data) {
+
+                            }
+                        })
+                        return false;
+                    });
+                    $(ele).on('tap', '.inp-tec', function() {
+                        var mz = $(this).parent().siblings('.contain-head').find('span').text();
+                        mz = encodeURI(mz);
+                        window.location.href = '../科技发现/302-技术难点.html?title=' + mz;
+                    });
+                    $(ele).on('click', '.inp-patent', function() {
+                        var mz = $(this).parent().siblings('.contain-head').find('span').text();
+                        mz = encodeURI(mz);
+                        window.location.href = '../科技发现/304-相关专业.html?title=' + mz;
+                    })
+                })
+            }
+        })
+    })
+    </script>
+</body>
+</html>
+<script type="text/html" id="shc2">
+    <%for(var i = 0;i < ret.length;i++){%>
+        <section class="patent">
+                <div class="patent-contain">
+                    <div class="contain-head">
+                        <span><%=ret[i].keywords%></span>
+                        <a href="javascript:;" class="sc">取消收藏</a>
+                    </div>
+                    <div class="contain-mid">
+                        <p>技术在研者 <span><%=ret[i].main_researcher_name%></span></p>
+                        <p>主要机构&nbsp;&nbsp;&nbsp;&nbsp;<span><%=ret[i].department%></span></p>
+                        <p>行业关注度
+                            <span>
+                                <%if(ret[i].hot_result == 0) {%>
+                        <i class="iconfont icon-wujiaoxingkong"></i>
+                        <i class="iconfont icon-wujiaoxingkong"></i>
+                        <i class="iconfont icon-wujiaoxingkong"></i>
+                        <i class="iconfont icon-wujiaoxingkong"></i>
+                    <%}else if(ret[i].hot_result > 0&&ret[i].hot_result <=0.2){%>
+                        <i class="iconfont icon-wujiaoxing-copy"></i>
+                        <i class="iconfont icon-wujiaoxingkong"></i>
+                        <i class="iconfont icon-wujiaoxingkong"></i>
+                        <i class="iconfont icon-wujiaoxingkong"></i>
+                        <i class="iconfont icon-wujiaoxingkong"></i>
+                    <%}else if(ret[i].hot_result > 0.2&&ret[i].hot_result <=0.4){%>
+                        <i class="iconfont icon-wujiaoxing-copy"></i>
+                        <i class="iconfont icon-wujiaoxing-copy"></i>
+                        <i class="iconfont icon-wujiaoxingkong"></i>
+                        <i class="iconfont icon-wujiaoxingkong"></i>
+                        <i class="iconfont icon-wujiaoxingkong"></i>
+                    <%}else if(ret[i].hot_result > 0.4&&ret[i].hot_result <=0.6){%>
+                        <i class="iconfont icon-wujiaoxing-copy"></i>
+                        <i class="iconfont icon-wujiaoxing-copy"></i>
+                        <i class="iconfont icon-wujiaoxing-copy"></i>
+                        <i class="iconfont icon-wujiaoxingkong"></i>
+                        <i class="iconfont icon-wujiaoxingkong"></i>
+                    <%}else if(ret[i].hot_result > 0.6&&ret[i].hot_result <=0.8){%>
+                        <i class="iconfont icon-wujiaoxing-copy"></i>
+                        <i class="iconfont icon-wujiaoxing-copy"></i>
+                        <i class="iconfont icon-wujiaoxing-copy"></i>
+                        <i class="iconfont icon-wujiaoxing-copy"></i>
+                        <i class="iconfont icon-wujiaoxingkong"></i>
+                    <%}else if(ret[i].hot_result > 0.8&&ret[i].hot_result <=1.0){%>
+                        <i class="iconfont icon-wujiaoxing-copy"></i>
+                        <i class="iconfont icon-wujiaoxing-copy"></i>
+                        <i class="iconfont icon-wujiaoxing-copy"></i>
+                        <i class="iconfont icon-wujiaoxing-copy"></i>
+                        <i class="iconfont icon-wujiaoxing-copy"></i>
+                    <%}%>
+                            </span>
+                        </p>
+                    </div>
+                    <div class="contain-bottom">
+                        <a href="javascript:;" class="inp-patent">相关专利 (<%=ret[i].patent_num%>个)</a>
+                        <a href="javascript:;" class="inp-tec">技术难点</a>
+                    </div>
+                </div>
+        </section>
+    <%}%>
+</script>

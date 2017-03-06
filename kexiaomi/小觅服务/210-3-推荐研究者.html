@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>推荐研究者3</title>
+    <script>
+    document.getElementsByTagName("html")[0].style.fontSize = document.documentElement.clientWidth / 15 + "px";
+    </script>
+    <link rel="stylesheet" type="text/css" href="../css/public.css" />
+    <link rel="stylesheet" type="text/css" href="../css/j-recom-tj3.css" />
+    <style type="text/css">
+        .tsh .t-txt1 {
+            font-size: 0.7rem;
+        }
+        .jz {
+            margin-top: 50%;
+            text-align: center;
+            font-size: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="clear head">
+        <a external href="206-2-需求详情.html" class="xq-msg">需求信息</a>
+        <a external href="210-3-推荐研究者.html" class="cur">推荐</a>
+        <a external href="javascript:;" class="respond">响应</a>
+    </header>
+    <div class="tsh">
+        <div class="t-txt1"></div>
+    </div>
+    <ul class="content">
+        <div class="jz">努力加载中...</div>
+    </ul>
+    <div class="mc"></div>
+    <div class="tk">
+        <div class="txt">
+            您的需求已发送，请等待回应，研究者将在该需求的有效时间内确定是否有兴趣
+        </div>
+        <button class="btn">我知道了</button>
+    </div>
+    <div class="zhe"></div>
+    <div id="cot">
+        <div class="tit">
+            页面将在<span>5</span>秒后跳转到技术需求者页面 如不想跳转请点击阴影部分
+        </div>
+    </div>
+    <a href="203-推荐研究者.html" class="tjmore">推荐更多</a>
+</body>
+
+</html>
+<script type="text/javascript" src="../js/jquery-3.0.0.min.js"></script>
+<script src="../js/jquery.cookie.js"></script>
+<script src="../js/template-native.js"></script>
+<script src="../js/j-recom-tj3.js"></script>
+<script type="text/javascript">
+
+</script>
+<script type="text/html" id="tel">
+    <%for(var i = 0;i < list.length;i++) {%>
+        <li>
+            <div class="c-top clear">
+                <div class="fl h-top clear">
+                    <img src="<%=list[i].photo_path%>" alt="" class="fl tx" />
+                    <div class="fl p-info">
+                        <div class="name">
+                            <span class="user"><%=list[i].name%></span> /
+                            <%=list[i].title%>
+                        </div>
+                        <div class="dw">
+                            <%=list[i].department%>
+                        </div>
+                    </div>
+                </div>
+                <span class="tag"></span>
+                <p class="fr shc">给他发需求</p>
+            </div>
+            <p class="c-txt">
+                <%=list[i].extract%>
+            </p>
+            <div class="c-bot clear">
+                <%for(var j = 0;j < list[i].tags.length;j++) {%>
+                    <p>
+                        <a href="#">
+                            <%=list[i].tags[j]%>
+                        </a>
+                    </p>
+                <%}%>
+            </div>
+        </li>
+    <%}%>
+</script>

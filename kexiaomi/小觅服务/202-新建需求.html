@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>新建需求</title>
+    <script>
+    document.getElementsByTagName("html")[0].style.fontSize = document.documentElement.clientWidth / 15 + "px";
+    </script>
+    <link rel="stylesheet" type="text/css" href="../css/public.css" />
+    <link rel="stylesheet" type="text/css" href="../css/sm.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/j-newdemand.css" />
+    <style type="text/css">
+    .searchTime {
+        position: relative;
+    }
+    
+    .day {
+        text-align: center;
+        width: 89%;
+        position: absolute;
+        top: 1.4rem;
+        left: 0;
+        background-color: #fff;
+        z-index: 10;
+        display: none;
+    }
+    
+    .day li {
+        padding: 0.3rem 0;
+        font-size: 0.5rem;
+        border-bottom: 1px solid #eee;
+    }
+    
+    input {
+        width: 40%;
+    }
+    select {
+        background-color: #fff;
+        width: 5rem;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="page-group">
+        <div class="page">
+            <div class="content">
+                <header>
+                    <img src="../imgs/j-xq-bj.png" alt="" class="bj" />
+                    <div class="clear nav">
+                        <a external href="#"><img src="../imgs/j-01-1.png" alt="" /></a>
+                        <a external href="#"><img src="../imgs/j-02-2.png" alt="" /></a>
+                        <a external href="#"><img src="../imgs/j-03-2.png" alt="" /></a>
+                        <a external href="#"><img src="../imgs/j-04-2.png" alt="" /></a>
+                    </div>
+                </header>
+                <form action="">
+                    <input type="text" class="tit" placeholder="请输入标题" />
+                    <textarea name="" id="content" cols="30" rows="4" placeholder="请输入内容"></textarea>
+                    <div class="clear">
+                        <a external class="tem" href="#">更多样例</a>
+                    </div>
+                    <div class="searchTime clear">
+                        <div class="fl">选择有效时间</div>
+                        <select class="fl fl-time" name="" id="" value="最高">
+                            <option value="最高选择30天">最高选择30天</option>
+                            <option value="1天">1天</option>
+                            <option value="2天">2天</option>
+                            <option value="3天">3天</option>
+                            <option value="4天">4天</option>
+                            <option value="5天">5天</option>
+                            <option value="6天">6天</option>
+                            <option value="7天">7天</option>
+                            <option value="8天">8天</option>
+                            <option value="9天">9天</option>
+                            <option value="10天">10天</option>
+                            <option value="11天">11天</option>
+                            <option value="12天">12天</option>
+                            <option value="13天">13天</option>
+                            <option value="14天">14天</option>
+                            <option value="15天">15天</option>
+                            <option value="16天">16天</option>
+                            <option value="17天">17天</option>
+                            <option value="18天">18天</option>
+                            <option value="19天">19天</option>
+                            <option value="20天">20天</option>
+                            <option value="21天">21天</option>
+                            <option value="22天">22天</option>
+                            <option value="23天">23天</option>
+                            <option value="24天">24天</option>
+                            <option value="25天">25天</option>
+                            <option value="26天">26天</option>
+                            <option value="27天">27天</option>
+                            <option value="28天">28天</option>
+                            <option value="29天">29天</option>
+                            <option value="30天">30天</option>
+                        </select>
+                        <div class="fr">
+                            <img src="../imgs/j-b-arrow2.png" alt="" />
+                        </div>
+                    </div>
+                    <div class="clear txt">
+                        <img src="../imgs/j-shm-icon.png" alt="" class="fl" />
+                        <div class="fr shm-info">截止时间过后您的需求将停止推荐给研究者
+                            <p>根据需求内容为您免费推荐近期在研究相关内容的研究者。 您的需求只会被推荐的研究者及客服人员看到。
+                            </p>
+                            <p class="lx">如对需求描述有任何问题，请点击联系客服</p>
+                        </div>
+                    </div>
+                    <div class="foot clear">
+                        <a external href="tel:010-56258261" class="fl">客服咨询</a>
+                        <input type="button" class="fr sub" value="免费推荐研究者" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    
+</script>
+</html>
+<script type="text/javascript" src="../js/jquery-3.0.0.min.js"></script>
+
+<script src="../js/jquery.cookie.js"></script>
+<script src="../js/j-newdemand.js"></script>

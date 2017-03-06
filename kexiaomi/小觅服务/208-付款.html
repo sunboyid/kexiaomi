@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>研究者详情</title>
+    <script>
+    document.getElementsByTagName("html")[0].style.fontSize = document.documentElement.clientWidth / 15 + "px";
+    </script>
+    <link rel="stylesheet" type="text/css" href="../css/public.css" />
+    <link rel="stylesheet" type="text/css" href="../css/j-payadvice.css" />
+    <style type="text/css">
+        .jz {
+            margin-top: 50%;
+            text-align: center;
+            font-size: 0.5rem;
+        }
+    .tk,
+    .tk-cont {
+        display: none;
+    }
+    
+    .download {
+        width: 5rem;
+        color: #fff;
+        text-align: center;
+        background: #69e489;
+        line-height: 1.2rem;
+        margin: 0 auto;
+    }
+    .zy {
+        display: inline-block;
+        width: 5rem;
+        color: #fff;
+        text-align: center;
+        background: #69e489;
+        line-height: 1.2rem;
+        margin-left: 32%;
+    }
+    </style>
+</head>
+
+<body>
+    <header>
+    </header>
+    <div class="content">
+        <div class="jz">努力加载中...</div>
+    </div>
+    <div class="tk"></div>
+    <div class="tk-cont">
+        <div class="tk-txt">
+            感谢你的使用，客服将在24小时内联系你，为你介绍咨费情况及服务内容！
+        </div>
+        <button>知道了</button>
+    </div>
+</body>
+
+</html>
+<script type="text/javascript" src="../js/jquery-3.0.0.min.js"></script>
+<script src="../js/template-native.js"></script>
+<script src="../js/payadvice.js"></script>
+
+
+<script type="text/html" id="res-head">
+    <div class="h-top clear">
+        <img src="<%=ret.photo_path%>" alt="" class="fl tx" />
+        <div class="fl p-info">
+            <div class="name">
+                <span class="user"><%=ret.name%></span> /
+                <span class="degree"><%=ret.title%></span>
+            </div>
+            <div class="dw">
+                <%=department%>
+            </div>
+        </div>
+    </div>
+    <div class="h-bot clear">
+        <%for(var i = 0;i < ret.tags.length;i++) {%>
+            <div>
+                <span><%=ret.tags[i].name%></span>
+                <span><%=ret.tags[i].date%></span>
+            </div>
+        <%}%>
+            <div class="zhk">展开更多</div>
+    </div>
+</script>
+<script type="text/html" id="res-content">
+    <div class="list rec">
+        <div class="tit clear">
+            <span class="fl l-line"></span>
+            <div class="fr clear tit-right">
+                <div class="fl">他的介绍</div>
+                <a href="#" class="fr more-intro">查看更多</a>
+            </div>
+        </div>
+        <div class="list-cont">
+            <%=ret.extract%>
+        </div>
+    </div>
+    <%if(ret.patent) {%>
+        <div class="list patent">
+            <div class="tit clear">
+                <span class="fl l-line"></span>
+                <div class="fr clear tit-right">
+                    <div class="fl">他的专利</div>
+                    <a href="#" class="fr more">查看更多</a>
+                </div>
+            </div>
+            <div class="list-cont2">
+                <%for(var i = 0;i < ret.patent.length;i++) {%>
+                    <div class="zl-content">
+                        <div class="pat-cont">
+                            <div class="pat-name">
+                                <%=ret.patent[i].title%>
+                            </div>
+                            <div class="pat-time">
+                                <span><%=ret.patent[i].status%></span>
+                            </div>
+                        </div>
+                        <div class="list-bot clear last">
+                            <span class="zy">我要转移</span>
+                        </div>
+                    </div>
+                <%}%>
+            </div>
+        </div>
+    <%}%>
+    <%if(ret.pager) {%>
+        <div class="list work">
+            <div class="tit clear">
+                <span class="fl l-line"></span>
+                <div class="fr clear tit-right">
+                    <div class="fl">他的发表</div>
+                    <a href="#" class="fr more-two">查看更多</a>
+                </div>
+            </div>
+            <div class="list-cont2">
+                <%for(var j = 0;j < ret.pager.length;j++) {%>
+                    <div class="report">
+                        <div class="work-tit">
+                            <%=ret.pager[j].title%>
+                        </div>
+                        <div class="work-cont">
+                            <div class="work-name">
+                                <%=ret.pager[j].author%>
+                            </div>
+                            <div class="work-name">发表时间:
+                                <%=ret.pager[j].public_day%>
+                            </div>
+                        </div>
+                        <div>
+                        </div>
+                        <div class="list-bot clear">
+                            <a href="<%=ret.pager[j].url%>" class="download">下载</a>
+                        </div>
+                    </div>
+                <%}%>
+            </div>
+        </div>
+    <%}%>       
+        <footer class="clear">
+            <input type="submit" class="fl add" value="添加收藏" />
+            <input type="submit" class="fr ff" value="付费咨询" />
+        </footer>
+</script>

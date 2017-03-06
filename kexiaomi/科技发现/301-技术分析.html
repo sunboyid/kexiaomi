@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>技术分析</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script>
+    document.getElementsByTagName("html")[0].style.fontSize = document.documentElement.clientWidth / 15 + "px";
+    </script>
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../css/tec-any.css">
+</head>
+
+<body>
+    <header id="header">
+        <div class="head">
+            您感兴趣的技术、产品
+        </div>
+    </header>
+    <section class="xq-msg">
+        <div class="xq-top">
+            <textarea placeholder="您感兴趣的技术、产品"></textarea>
+        </div>
+        <div class="xq-mid">例如: 等离子、机器人保健品</div>
+        <div class="xq-bottom">
+            <a href="#" class="tec">相关技术</a>
+        </div>
+    </section>
+    <div class="search-head">
+        为您发现
+    </div>
+    <section class="search-msg">
+        <ul>
+            <li>相关技术</li>
+            <li>技术难点</li>
+            <li>技术在研者</li>
+            <li>相关专利</li>
+            <li class="res-ins">国内主要研究机构</li>
+            <li class="elec">行业技术指标</li>
+        </ul>
+    </section>
+    <script src="../js/zepto.min.js"></script>
+    <script src="../js/touch.js"></script>
+    <script>
+    $(function() {
+        $('.xq-bottom a').on('tap', function() {
+
+            // $.ajax({
+            //     type: 'get',
+            //     url: 'http://www.kexiaomi.com/m/tech/analyze',
+            //     dataType: 'jsonp',
+            //     success:function(data) {
+            //         console.log(data);
+            //     },
+            //     error:function(err,errmsg) {
+            //         console.log(err,errmsg);
+            //     }
+            // })
+        	var text = $('textarea').val();
+            if ($('textarea').val() == '') {
+                alert('不能为空');
+            } else {
+                text = encodeURI(text);
+                window.location.href = '301-1-发现科技.html?key=' + text;
+            }
+        })
+    })
+    </script>
+</body>
+
+</html>

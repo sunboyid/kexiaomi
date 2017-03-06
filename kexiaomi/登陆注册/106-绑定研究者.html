@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>绑定技术研究者</title>
+    <script>
+    document.getElementsByTagName("html")[0].style.fontSize = document.documentElement.clientWidth / 15 + "px";
+    </script>
+    <link rel="stylesheet" type="text/css" href="../css/public.css" />
+    <link rel="stylesheet" type="text/css" href="../css/j-bind-rec.css" />
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="jz">努力加载中...</div>
+    </div>
+</body>
+<a href=""></a>
+</html>
+<script type="text/javascript" src="../js/zepto.min.js"></script>
+<script src="../js/touch.js"></script>
+<script src="../js/template-native.js"></script>
+<script type="text/javascript"> 
+
+
+$(function() {
+    $.ajax({
+        type: 'get',
+        url: 'http://kexiaomi.com/api/wechat/bindview?key=' + ddd + '&ak=dddd',
+        dataType: 'jsonp',
+        success: function(data) {
+            console.log(data);
+            var bdRes = template('bdres', data);
+            $('.content').html(bdRes);
+            $('.patent .zl-content').hide();
+            $('.patent .zl-content:first-child').show();
+            $('.patent .zl-content:nth-child(2)').show();
+            $('.patent').on('tap', '.more', function() {
+                if ($(this).text() == '查看更多') {
+                    $('.patent .zl-content').show();
+                    $(this).text('收起');
+                    $(this).tap(function() {
+                        $('.patent .zl-content').hide();
+                        $('.patent .zl-content:first-child').show();
+                        $('.patent .zl-content:nth-child(2)').show();
+                    })
+                } else {
+                    $(this).text('查看更多');
+                }
+                return false;
+            })
+            $('.rec').on('tap', '.more-intro', function() {
+                if ($(this).text() == '查看更多') {
+                    $('.rec .list-cont').css('overflow', 'visibility').height('100%');
+                    $(this).text('收起');
+                    $(this).tap(function() {
+                        $('.rec .list-cont').css('overflow', 'hidden').height('2.5rem');
+                    })
+                } else {
+                    $(this).text('查看更多');
+                }
+                return false;
+            })
+            $('.bd').on('tap', function() {
+                $.ajax({
+                    type: 'get',
+                    url: 'http://kexiaomi.com/api/wechat/bind',
+                    dataType: 'jsonp',
+                    success: function(data) {
+                        console.log(data);
+                        if(data.code == 0) {
+                            alert('绑定成功');
+                            window.location.href = '../小觅服务/210-精品推荐.html';
+                        }
+                    }
+                })
+            })
+
+        }
+    })
+});
+</script>
+
+
+<script type="text/html" id="bdres">
+    <header>
+        <div class="h-top clear">
+            <img src="<%=photo_path%>" alt="头像" class="fl tx" />
+            <div class="fl p-info">
+                <div class="name">
+                    <span class="user"><%=ret.name%></span> /
+                    <span class="degree">教授</span>
+                </div>
+                <div class="dw">
+                    <%=ret.department%>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="list rec">
+        <div class="tit clear">
+            <span class="fl l-line"></span>
+            <div class="fr clear tit-right">
+                <div class="fl">他的介绍</div>
+                <a href="#" class="fr more-intro">查看更多</a>
+            </div>
+        </div>
+        <div class="list-cont">
+            <%=ret.extract%>
+        </div>
+    </div>
+    <div class="list patent">
+        <div class="tit clear">
+            <span class="fl l-line"></span>
+            <div class="fr clear tit-right">
+                <div class="fl">他的专利</div>
+                <a href="#" class="fr more">查看更多</a>
+            </div>
+        </div>
+        <div class="list-cont2">
+            <%for(var i = 0;i < ret.patent.length;i++) {%>
+                <div class="zl-content">
+                    <div class="pat-cont">
+                        <div class="pat-name">
+                            <%=ret.patent[i].title%>
+                        </div>
+                        <div class="pat-time">
+                            <span><%=ret.patent[i].status%></span>
+                        </div>
+                    </div>
+                </div>
+            <%}%>
+        </div>
+    </div>
+    <div class="clear tsh">
+        <img src="../imgs/j-shm-icon.png" alt="" class="fl" />
+        <div class="fr t-txt">
+            如果这不是您的资料，请跳过；如果这是您的资料，绑定后将为推荐需求。
+        </div>
+    </div>
+    <div class="btn clear">
+        <a href="../小觅服务/209-未绑定.html">跳过</a>
+        <input type="submit" class="fr bd" value="绑定我" />
+    </div>
+</script>

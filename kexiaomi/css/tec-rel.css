@@ -1,0 +1,151 @@
+
+body {
+   	background-color: #f8f8f8;
+}
+#header {
+	width: 100%;
+	height: 2.2rem;
+	line-height: 2rem;
+	background-color: #fff;
+	padding-left: 0.48rem;
+	box-sizing: border-box;
+}
+#header input {
+   	height: 1.2rem;
+   	line-height: 1.2rem;
+   	padding-left: 0.44rem;
+   	box-sizing: border-box;
+   	font-size: 0.54rem;
+}
+#header .txt {
+   	width: 10.76rem;
+   	background-color: #f8f8f8;
+   	color: black;
+}
+#header .btn {
+   	padding-left: 0rem;
+	  text-align: center;
+   	width: 2.9rem;
+   	background-color: #6ae489;
+   	color: #fff;
+}
+.tec-title {
+	width: 100%;
+	height: 1.04rem;
+	background-color: #f3f3f3;
+	font-size: 0.4rem;
+	color: #6ae489;
+	line-height: 1.04rem;
+	padding-left: 0.44rem;
+	box-sizing: border-box;
+}
+.content {
+  margin-bottom: 0.5rem;
+}
+section {
+	width: 100%;
+	background-color: #fff;
+	margin-bottom: 0.36rem;
+	padding-bottom: 1rem;
+}
+.patent-contain {
+	width: 13.96rem;
+	height: 100%;
+	margin: 0 auto;
+}
+.contain-head {
+	width: 100%;
+	padding: 0.5rem 0;
+	box-sizing: border-box;
+	border-bottom: 1px solid #f8f8f8;
+}
+.contain-head span {
+    font-weight: 700;
+    font-size: 0.6rem;
+    color: #626f82;
+}
+.contain-head a {
+	display: inline-block;
+	color: #6ae489;
+  padding: 0 0.2rem;
+  font-size: 0.5rem;
+  margin-top: 0.5rem;
+	float: right;
+	border: 1px solid #6ae489;
+}
+.contain-mid {
+	width: 100%;
+	height: 3.2rem;
+}
+.contain-mid .more {
+	display: inline;
+    color: #6ae489;
+}
+.contain-mid p {
+    color: #ccc;
+	font-size: 0.48rem;
+	padding-top: 0.3rem;
+}
+.contain-mid span {
+    color: #626f82;
+}
+.contain-bottom {
+	width: 100%;
+	height: 1.2rem;
+	text-align: center;
+}
+.contain-bottom a {
+    display: inline-block;
+    width: 48%;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    font-size: 0.5rem;
+    border: 1px solid #6ae489;
+   	text-align: center;
+}
+.contain-bottom .inp-patent {
+   	color: #6ae489;
+    background-color: #fff;
+}
+.contain-bottom .inp-tec {
+   	color: #fff;
+   	background-color: #6ae489;
+}
+
+footer{
+    left:0;
+    bottom:0;
+    width:100%;
+    height:1.8rem;
+    position:fixed;
+    background:#fff;
+    font-size:0.6rem;
+    box-shadow:0.1rem 0.1rem 0.2rem #666;
+}
+footer .favo{
+    width:35%;
+    color:#69e489;
+    text-align:center;
+    line-height:1.8rem;
+}
+.sub{
+    width:65%;
+    color:#fff;
+    height:1.8rem;
+    font-size:0.6rem;
+    background:#69e489;
+}
+
+.icon-wujiaoxing-copy {
+    font-size: 0.5rem;
+    color: #6ae489;
+}
+.icon-wujiaoxingkong {
+    font-size: 0.5rem;
+    color: #6ae489;
+}
+.jz {
+      font-size: 0.5rem;
+      text-align: center;
+      margin-top:50%;
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>需求详情-研究者</title>
+    <script>
+    document.getElementsByTagName("html")[0].style.fontSize = document.documentElement.clientWidth / 15 + "px";
+    </script>
+    <link rel="stylesheet" type="text/css" href="../css/public.css" />
+    <link rel="stylesheet" type="text/css" href="../css/j-details-2.css" />
+    <style type="text/css">
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="jz">努力加载中...</div>
+    </div>
+</body>
+
+</html>
+<script src="../js/zepto.min.js"></script>
+<script src="../js/touch.js"></script>
+<script src="../js/template-native.js"></script>
+<script>
+$(function() {
+    var xqId = window.location.search;
+    xqId = xqId.substr(4,xqId.length-1);
+    console.log(xqId);
+    $.ajax({
+        type: 'get',
+        url: 'http://kexiaomi.com/api/require/detail?rq_id='+xqId,
+        dataType: 'jsonp',
+        success: function(data) {
+            console.log(data);
+            var xqRes = template('xqres', data);
+            $('.main').html(xqRes);
+            $('.sub').tap(function() {
+                alert('感谢您的反馈');
+                $.ajax({
+                    type: 'get',
+                    url: 'http://kexiaomi.com/api/wechat/interest?id='+ xqId +'&opt=1',
+                    dataType: 'jsonp',
+                    success: function(data) {
+                        console.log(data);
+                    }
+                })
+            });
+            $('.del').tap(function() {
+                alert('感谢您的反馈');
+                $.ajax({
+                    type: 'get',
+                    url: 'http://kexiaomi.com/api/wechat/interest?id='+ xqId +'&opt=2',
+                    dataType: 'jsonp',
+                    success: function(data) {
+                        console.log(data);
+                    }
+                })
+            })
+        }
+    })
+})
+</script>
+<script type="text/html" id="xqres">
+    <div class="head">
+        <div class="tit"><%=ret.enp_name%></div>
+        <div class="clear info">
+            <div class="fl">
+                创建人 <span class="name"><%=ret.creator%></span>
+            </div>
+            <div class="fr">
+                更新时间 <span><%=ret.deadline%></span>
+            </div>
+        </div>
+        <div class="state">推荐 <span>5</span> 位研究者 <span><%=ret.cantact_num%></span> 位联系 <span><%=ret.consult_num%></span> 次咨询</div>
+        <div class="name"><%=ret.title%></div>
+    </div>
+    <div class="tech">
+        <div class="rmb">拟提供资金 &nbsp; <span><%=ret.fund%> 万元</span></div>
+    </div>
+    <div class="content">
+        <%=ret.content%>
+    </div>
+    <div class="choice">
+        <div class="clear">
+            <%for(var i = 0;i < ret.do_way.length;i++) {%>
+                <span><%=ret.do_way[i]%></span>
+            <%}%>
+        </div>
+    </div>
+    <div class="clear shm">
+        <img src="../imgs/j-shm-icon.png" alt="" class="fl" />
+        <div class="fr txt">
+            如果是您感兴趣的需求，请点击，小觅将告知企业，并邀请您和企业参加对接活动
+        </div>
+    </div>
+    <footer class="clear">
+        <span class="fl del" href="#">不感兴趣</span>
+        <input class="fr sub" type="submit" value="感兴趣" />
+    </footer>
+</script>

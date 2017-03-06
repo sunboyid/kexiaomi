@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>需求详情</title>
+    <script>
+    document.getElementsByTagName("html")[0].style.fontSize = document.documentElement.clientWidth / 15 + "px";
+    </script>
+    <link rel="stylesheet" type="text/css" href="../css/public.css" />
+    <link rel="stylesheet" type="text/css" href="../css/sm.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/j-xuqiu-details.css" />
+    <style type="text/css">
+        .yz {
+            font-size: 0.5rem;
+            color: red;
+            margin-left: 1rem;
+        }
+        .jz {
+        margin-top: 50%;
+        text-align: center;
+        font-size: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-group">
+        <div class="page">
+            <div class="content">
+                <header class="clear head">
+                    <a external href="206-2-需求详情.html" class="cur">需求信息</a>
+                    <a external href="210-3-推荐研究者.html">推荐</a>
+                    <a external href="javascript:;" class="respond">响应</a>
+                </header>
+                <form action="">
+                    <div class="jz">努力加载中...</div>
+                </form>
+                <footer class="clear">
+                    <a external class="fl favo" href="tel:010-56258261">咨询客服</a>
+                    <a href="210-3-推荐研究者.html" class="fr sub">免费推荐研究者</a>
+                </footer>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script type="text/javascript" src="../js/jquery-3.0.0.min.js"></script>
+<script src="../js/jquery.cookie.js"></script>
+<script src="../js/template-native.js"></script>
+<script src="../js/xqxq-2.js"></script>
+
+<script type="text/html" id="xq-detail">
+    <div class="c-top">
+        <span class="f-tit"><%=ret.title%></span><span class="yz"></span>
+        <div class="x-cont">
+            <div class="cont-list">
+                <%=ret.content%>
+            </div>
+        </div>
+        <div class="searchTime">
+            有效时间 <span><%=ret.deadline%></span>
+        </div>
+        <div class="clear txt">
+            <img src="../imgs/j-shm-icon.png" alt="" class="fl" />
+            <div class="fr shm-info">截止时间过后您的需求将停止推荐给研究者。</div>
+        </div>
+    </div>
+    <div class="tit">
+        <span class="l-line"></span>资金预算（万元）
+    </div>
+    <div class="clear capital">
+        <%=ret.fund%>万元
+    </div>
+    <div class="mode">
+        <div class="tit">
+            <span class="l-line"></span>解决方式（可多选）
+        </div>
+        <div class="mode-cont">
+            <%for(var i = 0;i < ret.do_way.length;i++) {%>
+                <%=ret.do_way[i]%>
+            <%}%>
+        </div>
+    </div>
+    <div class="tit">
+        <span class="l-line"></span>给项目的其他配套支持
+    </div>
+    <div class="shm">
+        <%=ret.support%>
+    </div>
+</script>

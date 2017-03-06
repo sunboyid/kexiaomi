@@ -1,0 +1,157 @@
+body {
+    background-color: #f9f8f9;
+}
+
+#header {
+    width: 100%;
+    height: 4.88rem;
+    padding-top: 1rem;
+    box-sizing: border-box;
+    background: url('../imgs/personal.png') no-repeat;
+}
+
+#header .head-main {
+    width: 100%;
+    height: 3rem;
+    padding-left: 1rem;
+    position: relative;
+    box-sizing: border-box;
+}
+
+#header .head-main img {
+    width: 3rem;
+    height: 3rem;
+    float: left;
+}
+
+.head-main .head-msg {
+    height: 3rem;
+    float: left;
+}
+
+.head-msg div {
+    width: 100%;
+    height: 1rem;
+    line-height: 1rem;
+    margin-top: -0.1rem;
+    margin-bottom: 0.2rem;
+    margin-left: 0.9rem;
+    font-size: 0.5rem;
+    color: #fff;
+}
+
+.head-msg div span {
+    margin-left: 0.5rem;
+}
+
+.name span {
+    width: 1rem;
+    height: 0.5rem;
+    background-color: #e86363;
+    border-radius: 2px;
+    padding: 0 2px;
+}
+
+.org span {
+    width: 1rem;
+    height: 0.5rem;
+    color: #e86363;
+    border: 1px solid #e86363;
+    border-radius: 2px;
+    padding: 0 2px;
+}
+
+.jf span {
+    color: #e86363;
+}
+
+.head-tit {
+    display: inline-block;
+    font-size: 0.5rem;
+    border: 1px solid #fff;
+    position: absolute;
+    padding: 0 0.1rem;
+    top: -0.65rem;
+    right: 0.4rem;
+    color: #fff;
+}
+.head-main a {
+    color: #fff;
+}
+
+.my-zl {
+    margin: 0 auto;
+    width: 14.24rem;
+    height: 2.1rem;
+    border-bottom: 1px solid #e7e7e7;
+    position: relative;
+}
+
+.my-zl img {
+    width: 0.7rem;
+    height: 0.7rem;
+    position: absolute;
+    top: 0.7rem;
+}
+
+.my-zl span {
+    display: inline-block;
+    height: 2.1rem;
+    line-height: 2.1rem;
+    font-size: 0.5rem;
+    margin-left: 1rem;
+    color: #758198;
+}
+
+.my-zl .gt {
+    width: 0.5rem;
+    height: 0.5rem;
+    position: absolute;
+    right: 0;
+    top: 0.9rem;
+}
+
+.my-xf {
+    margin: 0 auto;
+    width: 14.24rem;
+    height: 2.1rem;
+    line-height: 2.1rem;
+    border-bottom: 1px solid #e7e7e7;
+    position: relative;
+}
+
+.my-xf span {
+    font-size: 0.5rem;
+    position: absolute;
+    left: 1rem;
+    color: #758198;
+}
+
+.my-xf .gt {
+    width: 0.5rem;
+    height: 0.5rem;
+    position: absolute;
+    right: 0;
+    top: 0.9rem;
+}
+
+.my-xf .iconfont {
+    font-size: 1rem;
+    margin-left: -0.2rem;
+    color: #6ae489;
+}
+
+.my-xf .icon-wodezixundingdan {
+    font-size: 0.8rem;
+    margin-left: -0.05rem;
+}
+
+.my-xf .icon-yaoqingpengyou {
+    font-size: 0.8rem;
+    margin-left: 0;
+}
+.jz {
+    font-size: 0.5rem;
+    text-align: center;
+    margin-top: 50%;
+}

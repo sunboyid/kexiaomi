@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>我的订单</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script>
+    document.getElementsByTagName("html")[0].style.fontSize = document.documentElement.clientWidth / 15 + "px";
+    </script>
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../laypage/skin/laypage.css">
+    <link rel="stylesheet" href="../css/m-item.css">
+    <style>
+    
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="jz">努力加载中...</div>
+    </div>
+    <div id="page"></div>
+    <div class="footer"><a href="tel:010-56258261">客服</a></div>
+</body>
+
+<script src="../js/jquery-3.0.0.min.js"></script>
+    <script src="../js/template-native.js"></script>
+    <script src="../laypage/laypage.js"></script>
+    <script>
+    $(function() {
+        $.ajax({
+            type: 'get',
+            url: 'http://kexiaomi.com/api/my/order',
+            dataType: 'jsonp',
+            success: function(data) {
+                console.log(data);
+                var total = data.ret.total;
+                var nums = 10;
+                var pages = Math.ceil(total / nums);
+                laypage({
+                    cont: 'page',
+                    pages: pages,
+                    curr: 1,
+                    skin: '#69e489',
+                    groups: 3,
+                    jump: function(e) {
+                            $.ajax({
+                                type: 'get',
+                                url: 'http://kexiaomi.com/api/my/order?page=' + e.curr,
+                                dataType: 'jsonp',
+                                success: function(data) {
+                                    console.log(data);
+                                    if (data.code == -10) {
+                                        window.location.href = '../login/101-login.html';
+                                    } else {
+                                        var info = data.ret;
+                                        var myOrder = template('my-order', info);
+                                        $('.content').html(myOrder);
+                                    }
+                                }
+                            })
+                    }
+                })
+
+            }
+        })
+
+    })
+    </script>
+    <script type="text/html" id="my-order">
+        <%for(var i = 0;i < items.length;i++) {%>
+            <div class="tit clear">
+                <div class="fr clear tit-right">
+                    <div class="fl">订单编号:
+                        <%=items[i].number%>
+                    </div>
+                </div>
+            </div>
+            <div class="c-list">
+                <div class="patent-name clear">
+                    <div class="fl">
+                        <%=items[i].re_name%>
+                    </div>
+                </div>
+                <div class="p-info">
+                    <div class="clear">
+                        <div class="fl">甲方</div>
+                        <div class="fr">
+                            <%=items[i].jia%>
+                        </div>
+                    </div>
+                    <div class="clear">
+                        <div class="fl">乙方</div>
+                        <div class="fr">
+                            <%=items[i].yi%>
+                        </div>
+                    </div>
+                    <div class="clear">
+                        <div class="fl">下单时间</div>
+                        <div class="fr">
+                            <span><%=items[i].ctime%></span>
+                        </div>
+                    </div>
+                    <div class="clear">
+                        <div class="fl">期间</div>
+                        <div class="fr">
+                            <span><%=items[i].term%></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <%}%>
+    </script>
+</html>

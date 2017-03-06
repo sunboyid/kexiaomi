@@ -1,0 +1,326 @@
+body {
+    background: #f8f8f8;
+}
+
+.head {
+    width: 92%;
+    padding: 4%;
+    background: #fff;
+}
+
+.ssk {
+    width: 94%;
+    padding: 0 3%;
+    line-height: 1.2rem;
+    background: #f3f3f3;
+    border-radius: 0.1rem;
+    border: 1px solid #ececec;
+}
+
+.ssk input {
+    width: 95%;
+    line-height: 1.2rem;
+    background: #f3f3f3;
+}
+
+.ssk a {
+    line-height: 1.2rem;
+}
+
+.ssk img {
+    width: 0.5rem;
+    display: inline-block;
+}
+
+.nav {
+    width: 100%;
+    background: #fff;
+    font-size: 0.6rem;
+    border-top: 1px solid #ededed;
+    border-bottom: 1px solid #ededed;
+}
+
+.nav li {
+    width: 30%;
+    float: left;
+    padding: 0.3rem 0;
+    position: relative;
+    text-align: center;
+}
+
+.nav li:nth-child(even) {
+    width: 5%;
+    color: #eee;
+}
+
+.nav img {
+    top: 0.5rem;
+    right: 0.7rem;
+    width: 0.4rem;
+    height: 0.4rem;
+    position: absolute;
+    display: inline-block;
+}
+
+.content li {
+    background: #fff;
+    margin-bottom: 0.3rem;
+}
+
+.c-top {
+    padding: 0 4%;
+}
+
+.h-top {
+    padding: 0.1rem 0 0.5rem;
+}
+
+.tx {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-top: 0.2rem;
+    margin-right: 0.4rem;
+    display: inline-block;
+}
+
+.name {
+    color: #ddd;
+    font-size: 0.5rem;
+    display: inline-block;
+}
+
+.name span {
+    display: inline-block;
+}
+
+.user {
+    color: #656f83;
+    vertical-align: bottom;
+    font-size: 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.dw {
+    color: #ddd;
+    font-size: 0.5rem;
+    line-height: 1rem;
+    margin-top: -0.2rem;
+}
+
+.shc {
+    color: #6ae489;
+    font-size: 0.5rem;
+    margin-top: 0.8rem;
+    padding: 1px 3px 0;
+    border: 1px solid #6ae489;
+}
+
+.c-txt {
+    margin: 0 4%;
+    color: #a6a6a6;
+    font-size: 0.4rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.c-bot {
+    width: 100%;
+    color: #6ae489;
+    font-size: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.c-bot span {
+    color: #6ae489;
+}
+
+.c-bot p {
+    float: left;
+    margin: 4% 0 0 4%;
+    padding: 0 0.5rem;
+    line-height: 1.2rem;
+    text-align: center;
+    border-radius: 1rem;
+    display: inline-block;
+    border: 1px solid #6ae489;
+}
+
+.nav li {
+    position: relative;
+}
+
+.nav .city {
+    width: 3.3rem;
+    height: 1.3rem;
+    line-height: 1.3rem;
+    position: absolute;
+    color: #656f8a;
+    font-size: 0.5rem;
+    top: 0;
+    left: 0;
+}
+
+.nav .city>span {
+    line-height: 0.56rem;
+    display: inline-block;
+    margin-left: -0.2rem;
+}
+
+.city .xl-city {
+    width: 3.2rem;
+    margin-top: 0.1rem;
+    border: 1px solid #ccc;
+    display: none;
+    overflow: auto;
+}
+
+.city .xl-city span {
+    display: block;
+}
+
+.nav .cla {
+    width: 4rem;
+    height: 1.3rem;
+    line-height: 1.3rem;
+    position: absolute;
+    color: #656f8a;
+    font-size: 0.5rem;
+    top: 0;
+    left: -10px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.cla .suj {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.nav .prof {
+    width: 4rem;
+    height: 1.3rem;
+    line-height: 1.3rem;
+    position: absolute;
+    color: #656f8a;
+    font-size: 0.5rem;
+    top: 0;
+    right: 1rem;
+    white-space: nowrap;
+}
+
+.prof .zc {
+    display: block;
+    padding-left: 0rem;
+    box-sizing: border-box;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.jz {
+    font-size: 0.5rem;
+    text-align: center;
+    margin-top: 50%;
+}
+
+.sel {
+    width: 100%;
+    height: 20rem;
+    background-color: #fff;
+    display: none;
+}
+
+.zhe {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(155, 155, 155, 0.5);
+    display: none;
+}
+
+.show {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70%;
+    background-color: #fff;
+    display: none;
+    overflow: auto;
+}
+
+.pos-val,
+.sub-val,
+.profess-val {
+    display: none;
+    font-size: 0.5rem;
+}
+
+.pos-val li,
+.sub-val li,
+.profess-val li {
+    border-bottom: 1px solid #ededed;
+    line-height: 2rem;
+    padding-left: 0.5rem;
+}
+
+.pos-val {
+    display: flex;
+}
+
+.pos-head {
+    flex: 1;
+}
+
+.sub-pub {
+    padding-left: 1rem;
+    box-sizing: border-box;
+}
+
+.pub {
+    flex: 1;
+    border-left: 1px solid #ededed;
+}
+
+.pos-start li {
+    border-right: 1px solid #ededed;
+}
+
+.wz1 {
+    border-left: none;
+    display: none;
+}
+
+.fenye {
+    margin-left: 30%;
+}
+
+.prev,
+.next {
+    width: 1.5rem;
+    line-height: 1.5rem;
+    background-color: #6ae489;
+    float: left;
+    margin: 0 0.5rem;
+    text-align: center;
+    font-size: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.next {
+    display: none;
+}
+
+.shcj {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    line-height: 1.8rem;
+    color: #6ae489;
+    text-align: center;
+    font-size: 0.6rem;
+    background-color: #fff;
+}

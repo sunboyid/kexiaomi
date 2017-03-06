@@ -1,0 +1,254 @@
+body {
+    background: #f8f8f8;
+    padding-bottom: 2.4rem;
+}
+
+header {
+    width: 100%;
+    height: 3.1rem;
+    position: relative;
+}
+
+.bj {
+    width: 100%;
+    height: 3.1rem;
+    display: block;
+}
+
+.nav {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3.1rem;
+    position: absolute;
+}
+
+.nav a {
+    float: left;
+    padding: 0 0.79rem;
+}
+
+.nav img {
+    width: 2.16rem;
+    height: 3.1rem;
+    display: block;
+}
+
+.tsh {
+    padding: 0.4rem 0.5rem 0.2rem;
+}
+
+.t-txt1 {
+    color: #656f83;
+    font-size: 0.7rem;
+}
+
+.t-txt2 {
+    color: #6ae489;
+    font-size: 0.5rem;
+}
+
+.tit {
+    color: #656f83;
+    padding: 0.4rem 0;
+    font-size: 0.6rem;
+}
+
+.content li {
+    background: #fff;
+    margin-top: 0.3rem;
+}
+
+.c-top {
+    padding: 0 4%;
+    position: relative;
+}
+
+.h-top {
+    padding: 0.1rem 0 0.5rem;
+}
+
+.tx {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-top: 0.2rem;
+    margin-right: 0.4rem;
+    display: inline-block;
+}
+
+.name {
+    color: #ddd;
+    font-size: 0.5rem;
+    display: inline-block;
+}
+
+.name span {
+    display: inline-block;
+}
+
+.user {
+    width: 2rem;
+    color: #656f83;
+    vertical-align: bottom;
+    font-size: 0.6rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.degree {
+    color: #ddd;
+    font-size: 0.5rem;
+    vertical-align: bottom;
+}
+
+.dw {
+    color: #ddd;
+    font-size: 0.5rem;
+    line-height: 1rem;
+    margin-top: -0.2rem;
+}
+
+.tag {
+    position: absolute;
+    right: 4.5rem;
+    top: 0.5rem;
+    color: red;
+    display: inline-block;
+    font-size: 0.5rem;
+}
+
+.shc {
+    color: #fff;
+    position: absolute;
+    right: 0.5rem;
+    top: -0.5rem;
+    padding: 0 0.2rem;
+    font-size: 0.5rem;
+    margin-top: 0.8rem;
+    line-height: 0.9rem;
+    background: #6ae489;
+    border: 1px solid #6ae489;
+}
+
+.c-txt {
+    margin: 0 4%;
+    color: #a6a6a6;
+    font-size: 0.4rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.c-bot {
+    width: 100%;
+    color: #6ae489;
+    font-size: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.c-bot a {
+    color: #6ae489;
+}
+
+.c-bot p {
+    float: left;
+    margin: 4% 0 0 4%;
+    padding: 0 0.5rem;
+    line-height: 1.2rem;
+    text-align: center;
+    border-radius: 1rem;
+    display: inline-block;
+    border: 1px solid #6ae489;
+}
+
+footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1.8rem;
+    position: fixed;
+    background: #fff;
+    font-size: 0.6rem;
+    box-shadow: 0.1rem 0.1rem 0.2rem #666;
+}
+
+footer .favo {
+    width: 35%;
+    color: #69e489;
+    text-align: center;
+    line-height: 1.8rem;
+}
+
+.sub {
+    width: 65%;
+    color: #fff;
+    height: 1.8rem;
+    font-size: 0.6rem;
+    background: #69e489;
+}
+
+.mc {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+}
+.zhe {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: none;
+    background: rgba(0, 0, 0, 0.5);
+}
+#cot {
+    top: 9rem;
+    left: 50%;
+    width: 12.4rem;
+    height: 6rem;
+    display: none;
+    position: fixed;
+    background: #fff;
+    font-size: 0.7rem;
+    text-align: center;
+    padding: 0 0.8rem;
+    margin-left: -7rem;
+}
+.tit {
+    margin-top: 1.5rem;
+    font-size: 0.7rem;
+}
+.tit span {
+    color: #656f83;
+}
+.tk {
+    top: 9rem;
+    left: 50%;
+    width: 12.4rem;
+    color: #656f83;
+    position: fixed;
+    background: #fff;
+    font-size: 0.7rem;
+    text-align: center;
+    padding: 0 0.8rem;
+    margin-left: -7rem;
+}
+
+.txt {
+    color: #6ae489;
+    font-size: 0.6rem;
+    line-height: 1rem;
+    padding: 1rem 0.5rem 0.5rem;
+}
+
+.tk button {
+    width: 90%;
+    color: #fff;
+    font-size: 0.6rem;
+    line-height: 1.6rem;
+    background: #6ae489;
+    margin: 0.2rem 5% 1rem;
+}

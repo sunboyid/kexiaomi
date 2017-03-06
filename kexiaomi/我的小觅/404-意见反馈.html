@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>意见反馈</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script>
+    document.getElementsByTagName("html")[0].style.fontSize = document.documentElement.clientWidth / 15 + "px";
+    </script>
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../font/iconfont.css">
+    <style>
+    body {
+        background-color: #fff;
+    }
+    
+    textarea {
+        width: 14rem;
+        height: 5.04rem;
+        margin-top: 0.44rem;
+        margin-left: 0.46rem;
+        padding-left: 0.4rem;
+        padding-top: 0.5rem;
+        box-sizing: border-box;
+        border: 1px solid #ebf0f4;
+    }
+    
+    .contain .btn-inv {
+        width: 14.2rem;
+        height: 1.5rem;
+        line-height: 1.5rem;
+        background-color: #6ae489;
+        border-radius: 0.8rem;
+        margin-top: 1rem;
+        margin-left: 0.46rem;
+    }
+    
+    .contain .btn-inv a {
+        color: #fff;
+        text-align: center;
+        font-size: 0.5rem;
+    }
+    
+    .footer {
+        width: 100%;
+        height: 2.6rem;
+        line-height: 2.6rem;
+        margin-top: 0.96rem;
+        text-align: center;
+        background-color: #6ae489;
+    }
+    
+    .footer i {
+        font-size: 1.3rem;
+        color: #fff;
+    }
+    
+    .footer a {
+        display: inline;
+        font-size: 0.8rem;
+        color: #fff;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="contain">
+        <textarea placeholder="请输入意见反馈问题; 意见反馈问题"></textarea>
+        <div class="btn-inv">
+            <a href="#">提交反馈</a>
+        </div>
+    </div>
+    <div class="footer">
+        <i class="iconfont icon-dianhua"></i>
+        <a href="tel:010-56258261">010-56258261</a>
+    </div>
+</body>
+<script src="../js/jquery-3.0.0.min.js"></script>
+<script>
+$(function() {
+    $('.btn-inv a').on('click', function() {
+            var val = $('textarea').val();
+            if (val == '请输入意见反馈问题; 意见反馈问题' || val == '') {
+                alert('反馈信息不能为空');
+            } else {
+                $.ajax({
+                    type: 'post',
+                    url: 'http://kexiaomi.com/api/my/feedback?content=' + val,
+                    dataType: 'jsonp',
+                    success: function(data) {
+                        if (data.code == -10) {
+                            window.location.href = '../登陆注册/101-登陆.html';
+                        } else {
+                            alert('提交成功');
+                        }
+                    }
+                })
+                return false;
+            }
+    })
+})
+</script>
+
+</html>

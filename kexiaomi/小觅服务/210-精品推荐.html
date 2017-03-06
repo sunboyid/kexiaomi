@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>需求列表</title>
+    <script>
+    document.getElementsByTagName("html")[0].style.fontSize = document.documentElement.clientWidth / 15 + "px";
+    </script>
+    <link rel="stylesheet" type="text/css" href="../css/public.css" />
+    <link rel="stylesheet" type="text/css" href="../css/j-re-list.css" />
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>
+    <div class="head">
+        <div class="clear head-cont">
+            <a href="210-精品推荐.html" class="fl cur">精选推荐</a>
+            <a href="212-感兴趣.html" class="fr">我感兴趣</a>
+        </div>
+    </div>
+    <div class="prompt">为您推荐如下已审核的企业需求，点击‘感兴趣’需求方将收到您的回应</div>
+    <div class="content">
+        <div class="jz">努力加载中...</div>
+    </div>
+</body>
+
+</html>
+<script src="../js/jquery-3.0.0.min.js"></script>
+<script src="../js/jquery.cookie.js"></script>
+<script src="../js/template-native.js"></script>
+<script>
+$(function() {
+    var xqId = $.cookie('xqId');
+    $.ajax({
+        type: 'get',
+        url: 'http://kexiaomi.com/api/wechat/recommended',
+        dataType: 'jsonp',
+        success: function(data) {
+            console.log(data);
+            var goodRec = template('goodrec', data);
+            $('.content').html(goodRec);
+            $('.content .list').each(function(index, ele) {
+                $(ele).on('click', '.del', function() {
+                    $(ele).remove();
+                })
+
+                $(ele).on('click', '.but', function() {
+                    alert('感谢您的反馈');
+                    $.ajax({
+                        type: 'get',
+                        url: 'http://kexiaomi.com/api/wechat/interest?id=' + xqId + '&opt=1',
+                        dataType: 'jsonp',
+                        success: function(data) {
+                            console.log(data);
+                        }
+                    })
+                })
+            })
+        }
+    })
+})
+</script>
+<script type="text/html" id="goodrec">
+    <%for(var i = 0;i < ret.length;i++) {%>
+        <div class="list">
+            <a href="211-需求详情-研究者.html?id=<%=ret[i].rq_id%>">
+                <div class="clear tit">
+                    <div class="fl">
+                        <%=ret[i].title%>
+                    </div>
+                    <div class="fr num">2</div>
+                </div>
+                <div class="clear info">
+                    <div class="fl">
+                        创建人 <span class="name"><%=ret[i].creator%></span>
+                    </div>
+                    <div class="fr">
+                        更新时间 <span><%=ret[i].u_time%></span>
+                    </div>
+                </div>
+                <div class="state">
+                    解决方式 &nbsp;
+                    <%for(var j = 0;j < ret[i].do_way.length;j++) {%>
+                        <span><%=ret[i].do_way[j]%></span> &nbsp;
+                        <%}%>
+                </div>
+            </a>
+            <div class="operation clear">
+                <div class="fl del">删除</div>
+                <button class="fr but">感兴趣</button>
+            </div>
+        </div>
+    <%}%>
+</script>

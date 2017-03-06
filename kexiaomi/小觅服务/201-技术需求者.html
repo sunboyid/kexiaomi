@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>需求（技术需求者）</title>
+    <script>
+    document.getElementsByTagName("html")[0].style.fontSize = document.documentElement.clientWidth / 15 + "px";
+    </script>
+    <link rel="stylesheet" type="text/css" href="../css/public.css" />
+    <link rel="stylesheet" href="../laypage/skin/laypage.css">
+    <link rel="stylesheet" type="text/css" href="../css/j-demand.css" />
+    <style type="text/css">
+    .jz {
+        margin-top: 50%;
+        text-align: center;
+        font-size: 0.5rem;
+    }
+    
+    .up-time {
+        font-size: 0.5rem;
+    }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="../imgs/j-xq-bj.png" alt="" class="bj" />
+        <div class="clear nav">
+            <a href="#"><img src="../imgs/j-01-2.png" alt="" /></a>
+            <a href="#"><img src="../imgs/j-02-2.png" alt="" /></a>
+            <a href="#"><img src="../imgs/j-03-2.png" alt="" /></a>
+            <a href="#"><img src="../imgs/j-04-2.png" alt="" /></a>
+        </div>
+    </header>
+    <div id="content">
+        <div class="jz">努力加载中...</div>
+    </div>
+    <div id="page"></div>
+    <a href="202-新建需求.html" class="new">新建需求</a>
+</body>
+
+</html>
+<script src="../js/jquery-3.0.0.min.js"></script>
+<script src="../js/jquery.cookie.js"></script>
+<script src="../js/template-native.js"></script>
+<script src="../laypage/laypage.js"></script>
+<script src="../js/xqperson.js"></script>
+<script type="text/html" id="my-req">
+    <%for(var i in items) {%>
+        <%if(items[i].status == '未通过审核'){%>
+            <a href="206-1-需求详情.html">
+                <div class="list">
+                    <div class="list-top">
+                        <span class="xqName"><%=items[i].title%></span>
+                        <span class="num"><%=items[i].status%></span>
+                    </div>
+                    <div class="list-info">
+                        <div class="in-top">
+                            <div class="c-person">
+                                <span class="in-left founder">创建人</span>
+                                <span class="founderName"><%=items[i].creator%></span>
+                            </div>
+                            <div class="upTime">
+                                <span class="in-left">更新时间</span>
+                                <span class="up-time"><%=items[i].update_time%></span>
+                            </div>
+                        </div>
+                        <div class="in-bot">
+                            推荐 <span><%=items[i].r_num%></span> 位研究者 <span><%=items[i].conn_num%></span> 位 <span><%=items[i].cons_num%></span> 次咨询
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <%}%>
+                <%if(items[i].status == '已审核' || items[i].status == '等待审核'){%>
+                    <a href="206-2-需求详情.html">
+                        <div class="list">
+                            <div class="list-top">
+                                <span class="xqName"><%=items[i].title%></span>
+                                <span class="num"><%=items[i].status%></span>
+                            </div>
+                            <div class="list-info">
+                                <div class="in-top">
+                                    <div class="c-person">
+                                        <span class="in-left founder">创建人</span>
+                                        <span class="founderName"><%=items[i].creator%></span>
+                                    </div>
+                                    <div class="upTime">
+                                        <span class="in-left">更新时间</span>
+                                        <span class="up-time"><%=items[i].update_time%></span>
+                                    </div>
+                                </div>
+                                <div class="in-bot">
+                                    推荐 <span><%=items[i].r_num%></span> 位研究者 <span><%=items[i].conn_num%></span> 位
+                                    <spaspan>
+                                        <%=items[i].cons_num%>
+                                            </span> 次咨询
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                <%}%>
+            <%}%>
+</script>

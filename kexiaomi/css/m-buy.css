@@ -1,0 +1,71 @@
+body {
+    background-color: #f9f8f9;
+}
+
+section {
+    margin: 0 auto;
+    width: 14.2rem;
+    border-bottom: 1px solid #e7e7e7;
+}
+.content {
+    margin-bottom: 1rem;
+}
+.top {
+    display: flex;
+    height: 1rem;
+    line-height: 1rem;
+}
+
+.top div {
+    flex: 1;
+}
+
+.top .d-left {
+    text-align: left;
+    font-size: 0.56rem;
+}
+
+.top .num-mid {
+    text-align: center;
+    padding-left: 0.7rem;
+    font-size: 0.56rem;
+    color: #6ae489;
+}
+
+.bottom {
+    display: flex;
+    height: 1rem;
+    line-height: 1rem;
+}
+
+.bottom div {
+    flex: 1;
+    color: #999;
+}
+
+.top .num-jf {
+    text-align: right;
+    padding-right: 0.8rem;
+    font-size: 0.56rem;
+    color: #e86363;
+}
+
+.bottom .date {
+    text-align: left;
+    font-size: 0.56rem;
+}
+
+.bottom .jf-change {
+    text-align: center;
+    font-size: 0.56rem;
+}
+
+.bottom .jf-right {
+    text-align: right;
+    font-size: 0.56rem;
+}
+.jz {
+    font-size: 0.5rem;
+    text-align: center;
+    margin-top:50%;
+}

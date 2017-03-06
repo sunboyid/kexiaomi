@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>回应-3</title>
+    <script>
+    document.getElementsByTagName("html")[0].style.fontSize = document.documentElement.clientWidth / 15 + "px";
+    </script>
+    <link rel="stylesheet" type="text/css" href="../css/public.css" />
+    <link rel="stylesheet" type="text/css" href="../css/j-respond-3.css" />
+    <link rel="stylesheet" href="../laypage/skin/laypage.css">
+    <style type="text/css">
+        .jz {
+            margin-top: 50%;
+            text-align: center;
+            font-size: 0.5rem;
+        }
+        .c-bot {
+            position: relative;
+        }
+        .btn {
+            position: absolute;
+            right: 0.5rem;
+        }
+        #page {
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="clear head">
+        <a external href="javascript:;" class="xqmsg">需求信息</a>
+        <a external href="javascript:;" class="mtj">推荐</a>
+        <a external href="207-3-回应.html" class="cur">响应</a>
+    </header>
+    <div class="main">
+        <div class="jz">努力加载中...</div>
+    </div>
+    <div id="page"></div>
+</body>
+
+</html>
+<script type="text/javascript" src="../js/jquery-3.0.0.min.js"></script>
+<script src="../js/jquery.cookie.js"></script>
+<script src="../js/template-native.js"></script>
+<script src="../laypage/laypage.js"></script>
+<script src="../js/j-respond-3.js"></script>
+<script type="text/javascript">
+
+</script>
+<script type="text/html" id="respond">
+    <div class="tit">
+        <div class="t-top">
+            <%=ret.rq_name%>
+        </div>
+        <div class="t-bot">
+            已经给 <span><%=ret.send%></span> 个专家发送需求 <span><%=ret.receive%></span> 个回应
+        </div>
+    </div>
+    <ul class="content">
+        <%for(var i = 0;i < ret.items.length;i++) {%>
+            <%var item = ret.items[i]%>
+                <li>
+                    <div class="c-top clear">
+                        <div class="fl h-top clear">
+                            <img src="<%=item.photo_path%>" alt="" class="fl tx" />
+                            <div class="fl p-info">
+                                <div class="name">
+                                    <span class="user"><%=item.name%></span> /
+                                    <%=item.title%>
+                                </div>
+                                <div class="dw">
+                                    所在地 <span><%=item.department%></span>
+                                </div>
+                                <div class="respond">
+                                    回应 <span> 2016-8-31 16：45</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fr btn">
+                            <p id="zx">付费咨询</p>
+                        </div>
+                    </div>
+                    
+                    <p class="c-txt">
+                        <%=item.extract%>
+                    </p>
+                    <div class="c-bot clear">
+                        <%for(var j = 0;j < item.tags.length;j++) {%>
+                            <p>
+                                <span>
+                                    <%=item.tags[j]%>
+                                </span>
+                            </p>
+                        <%}%>
+                    </div>
+                </li>
+        <%}%>
+    </ul>
+</script>

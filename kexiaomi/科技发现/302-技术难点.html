@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>技术发现</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script>
+    document.getElementsByTagName("html")[0].style.fontSize = document.documentElement.clientWidth / 15 + "px";
+    </script>
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../fonts/iconfont.css">
+    <link rel="stylesheet" href="../laypage/skin/laypage.css">
+    <link rel="stylesheet" href="../css/tec-found.css">
+    <style>
+        #page {
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <div class="top"><span class="name">热等离子体</span> 的 技术难点包括</div>
+        <ul class="nav clear">
+            <li>
+                <span>相关度</span>
+                <img src="../imgs/j-t-arrow.png" alt="" />
+            </li>
+            <li>
+                <span>专业度</span>
+                <img src="../imgs/j-t-arrow.png" alt="" />
+            </li>
+            <li>
+                <span>最新热度</span>
+                <img src="../imgs/j-t-arrow.png" alt="" />
+            </li>
+        </ul>
+    </header>
+    <div class="content">
+        <div class="jz">努力加载中...</div>
+    </div>
+    <div id="page"></div>
+    <footer>
+        <input class="buy" type="submit" value="购买详细技术分析报告（5000元）" />
+    </footer>
+    <script type="text/javascript" src="../js/zepto.min.js"></script>
+    <script src="../js/touch.js"></script>
+    <script src="../js/template-native.js"></script>
+    <script src="../laypage/laypage.js"></script>
+    <script src="../js/j-tecfound.js"></script>
+    <script type="text/javascript">
+    
+    </script>
+    <script type="text/html" id="tec-found">
+        <%for(var i = 0;i < items[0].length;i++) {%>
+            <%var title = items[0][i];%>
+                <section class="patent">
+                    <div class="patent-contain">
+                        <div class="contain-head">
+                            <span class="kl"><%=items[0][i].keywords%></span>
+                        </div>
+                        <div class="contain-mid">
+                            <p class="deg reg">相关度
+                                <span class="pb1">
+                            <span>
+                                <%if(title.match_result == 0) {%>
+                                    <i class="iconfont icon-wujiaoxingkong"></i>
+                                    <i class="iconfont icon-wujiaoxingkong"></i>
+                                    <i class="iconfont icon-wujiaoxingkong"></i>
+                                    <i class="iconfont icon-wujiaoxingkong"></i>
+                                <%}else if(title.match_result > 0&&title.match_result <=1){%>
+                                    <i class="iconfont icon-wujiaoxing-copy"></i>
+                                    <i class="iconfont icon-wujiaoxingkong"></i>
+                                    <i class="iconfont icon-wujiaoxingkong"></i>
+                                    <i class="iconfont icon-wujiaoxingkong"></i>
+                                    <i class="iconfont icon-wujiaoxingkong"></i>
+                                <%}else if(title.match_result > 1&&title.match_result <=2){%>
+                                    <i class="iconfont icon-wujiaoxing-copy"></i>
+                                    <i class="iconfont icon-wujiaoxing-copy"></i>
+                                    <i class="iconfont icon-wujiaoxingkong"></i>
+                                    <i class="iconfont icon-wujiaoxingkong"></i>
+                                    <i class="iconfont icon-wujiaoxingkong"></i>
+                                <%}else if(title.match_result > 2&&title.match_result <=3){%>
+                                    <i class="iconfont icon-wujiaoxing-copy"></i>
+                                    <i class="iconfont icon-wujiaoxing-copy"></i>
+                                    <i class="iconfont icon-wujiaoxing-copy"></i>
+                                    <i class="iconfont icon-wujiaoxingkong"></i>
+                                    <i class="iconfont icon-wujiaoxingkong"></i>
+                                <%}else if(title.match_result > 3&&title.match_result <=4){%>
+                                    <i class="iconfont icon-wujiaoxing-copy"></i>
+                                    <i class="iconfont icon-wujiaoxing-copy"></i>
+                                    <i class="iconfont icon-wujiaoxing-copy"></i>
+                                    <i class="iconfont icon-wujiaoxing-copy"></i>
+                                    <i class="iconfont icon-wujiaoxingkong"></i>
+                                <%}else if(title.match_result > 4&&title.match_result <=5){%>
+                                    <i class="iconfont icon-wujiaoxing-copy"></i>
+                                    <i class="iconfont icon-wujiaoxing-copy"></i>
+                                    <i class="iconfont icon-wujiaoxing-copy"></i>
+                                    <i class="iconfont icon-wujiaoxing-copy"></i>
+                                    <i class="iconfont icon-wujiaoxing-copy"></i>
+                                <%}%>
+                            </span>
+                                </span>
+                            </p>
+                            <p class="deg rea">专业度
+                                <span class="pb1">
+                            <span>
+                                <%if(title.maturity_result == 0) {%>
+                                    <i class="iconfont icon-wujiaoxingkong"></i>
+                                    <i class="iconfont icon-wujiaoxingkong"></i>
+                                    <i class="iconfont icon-wujiaoxingkong"></i>
+                                    <i class="iconfont icon-wujiaoxingkong"></i>
+                                <%}else if(title.maturity_result > 0&&title.maturity_result <=0.2){%>
+                                    <i class="iconfont icon-wujiaoxing-copy"></i>
+                                    <i class="iconfont icon-wujiaoxingkong"></i>
+                                    <i class="iconfont icon-wujiaoxingkong"></i>
+                                    <i class="iconfont icon-wujiaoxingkong"></i>
+                                    <i class="iconfont icon-wujiaoxingkong"></i>
+                                <%}else if(title.maturity_result > 0.2&&title.maturity_result <=0.4){%>
+                                    <i class="iconfont icon-wujiaoxing-copy"></i>
+                                    <i class="iconfont icon-wujiaoxing-copy"></i>
+                                    <i class="iconfont icon-wujiaoxingkong"></i>
+                                    <i class="iconfont icon-wujiaoxingkong"></i>
+                                    <i class="iconfont icon-wujiaoxingkong"></i>
+                                <%}else if(title.maturity_result > 0.4&&title.maturity_result <=0.6){%>
+                                    <i class="iconfont icon-wujiaoxing-copy"></i>
+                                    <i class="iconfont icon-wujiaoxing-copy"></i>
+                                    <i class="iconfont icon-wujiaoxing-copy"></i>
+                                    <i class="iconfont icon-wujiaoxingkong"></i>
+                                    <i class="iconfont icon-wujiaoxingkong"></i>
+                                <%}else if(title.maturity_result > 0.6&&title.maturity_result <=0.8){%>
+                                    <i class="iconfont icon-wujiaoxing-copy"></i>
+                                    <i class="iconfont icon-wujiaoxing-copy"></i>
+                                    <i class="iconfont icon-wujiaoxing-copy"></i>
+                                    <i class="iconfont icon-wujiaoxing-copy"></i>
+                                    <i class="iconfont icon-wujiaoxingkong"></i>
+                                <%}else if(title.maturity_result > 0.8&&title.maturity_result <=1){%>
+                                    <i class="iconfont icon-wujiaoxing-copy"></i>
+                                    <i class="iconfont icon-wujiaoxing-copy"></i>
+                                    <i class="iconfont icon-wujiaoxing-copy"></i>
+                                    <i class="iconfont icon-wujiaoxing-copy"></i>
+                                    <i class="iconfont icon-wujiaoxing-copy"></i>
+                                <%}%>
+                            </span>
+                                </span>
+                            </p>
+                            <p class="reh">研究最热三年为</p>
+                            <%for(var j = 0;j < title.last.length;j++) {%>
+                                <p>
+                                    <%=title.last[j][0]%>&nbsp;<span class="hot-deg">热度&nbsp;<%=title.last[j][1]*100%>%</span>
+                                        <span class="pb2">
+                                    <span>关注度&nbsp;&nbsp;
+                                         <%if(title.last[j][1] == 0) {%>
+                                    <i class="iconfont icon-wujiaoxingkong"></i>
+                                    <i class="iconfont icon-wujiaoxingkong"></i>
+                                    <i class="iconfont icon-wujiaoxingkong"></i>
+                                    <i class="iconfont icon-wujiaoxingkong"></i>
+                                <%}else if(title.last[j][1] > 0&&title.last[j][1] <=0.2){%>
+                                    <i class="iconfont icon-wujiaoxing-copy"></i>
+                                    <i class="iconfont icon-wujiaoxingkong"></i>
+                                    <i class="iconfont icon-wujiaoxingkong"></i>
+                                    <i class="iconfont icon-wujiaoxingkong"></i>
+                                    <i class="iconfont icon-wujiaoxingkong"></i>
+                                <%}else if(title.last[j][1] > 0.2&&title.last[j][1] <=0.4){%>
+                                    <i class="iconfont icon-wujiaoxing-copy"></i>
+                                    <i class="iconfont icon-wujiaoxing-copy"></i>
+                                    <i class="iconfont icon-wujiaoxingkong"></i>
+                                    <i class="iconfont icon-wujiaoxingkong"></i>
+                                    <i class="iconfont icon-wujiaoxingkong"></i>
+                                <%}else if(title.last[j][1] > 0.4&&title.last[j][1] <=0.6){%>
+                                    <i class="iconfont icon-wujiaoxing-copy"></i>
+                                    <i class="iconfont icon-wujiaoxing-copy"></i>
+                                    <i class="iconfont icon-wujiaoxing-copy"></i>
+                                    <i class="iconfont icon-wujiaoxingkong"></i>
+                                    <i class="iconfont icon-wujiaoxingkong"></i>
+                                <%}else if(title.last[j][1] > 0.6&&title.last[j][1] <=0.8){%>
+                                    <i class="iconfont icon-wujiaoxing-copy"></i>
+                                    <i class="iconfont icon-wujiaoxing-copy"></i>
+                                    <i class="iconfont icon-wujiaoxing-copy"></i>
+                                    <i class="iconfont icon-wujiaoxing-copy"></i>
+                                    <i class="iconfont icon-wujiaoxingkong"></i>
+                                <%}else if(title.last[j][1] > 0.8&&title.last[j][1] <=1){%>
+                                    <i class="iconfont icon-wujiaoxing-copy"></i>
+                                    <i class="iconfont icon-wujiaoxing-copy"></i>
+                                    <i class="iconfont icon-wujiaoxing-copy"></i>
+                                    <i class="iconfont icon-wujiaoxing-copy"></i>
+                                    <i class="iconfont icon-wujiaoxing-copy"></i>
+                                <%}%>
+                                    </span>
+                                        </span>
+                                </p>
+                                <%}%>
+                                    <div class="use"><span>有用</span></div>
+                                    <div class="no-use"><span>无用</span></div>
+                        </div>
+                    </div>
+                </section>
+                <%}%>
+    </script>
+</body>
+
+</html>

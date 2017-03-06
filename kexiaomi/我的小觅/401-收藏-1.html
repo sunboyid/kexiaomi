@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>收藏夹1</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script>
+    document.getElementsByTagName("html")[0].style.fontSize = document.documentElement.clientWidth / 15 + "px";
+    </script>
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../css/m-save.css">
+    <style>
+    </style>  
+</head>
+
+<body>
+    <header id="header">
+        <div class="head-til">
+            <div class="res-left"><a href="#">研究者</a></div>
+            <div class="tec-right"><a href="401-收藏-2.html">技术分析</a></div>
+        </div>
+    </header>
+    <ul class="content">
+        <div class="jz">努力加载中...</div>
+    </ul>
+    <script src="../js/zepto.min.js"></script>
+    <script src="../js/touch.js"></script>
+    <script src="../js/template-native.js"></script>
+    <script>
+    $(function() {
+        $.ajax({
+            type: 'get',
+            url: 'http://kexiaomi.com/api/my/rearcher',
+            dataType: 'jsonp',
+            success: function(data) {
+                console.log(data);
+                var shc = template('shc', data);
+                $('.content').html(shc);
+                $('.content li .shc').each(function(index, ele) {
+                    $(ele).on('tap', function() {
+                        $(this).parents('li').hide();
+                        var resId = data.ret[index].id;
+                        var resInt = data.ret[index].department;
+                        $.ajax({
+                            type: 'get',
+                            url: 'http://kexiaomi.com/api/tech/collect-researcher?id='+ resId +'&opt='+resInt,
+                            dataType: 'jsonp',
+                            success: function(data) {
+                            }
+                        })
+                    })
+                })   
+            }
+        })
+    })
+    </script>
+    <script type="text/html" id="shc">
+        <%for(var i = 0;i < ret.length;i++) {%>
+            <li class="a">
+                <div class="c-top clear">
+                    <div class="fl h-top clear">
+                        <img src="<%=ret[i].photo_path%>" alt="" class="fl tx" />
+                        <div class="fl p-info">
+                            <div class="name">
+                                <span class="user"><%=ret[i].name%></span> /
+                                <span class="degree"><%=ret[i].title%></span>
+                            </div>
+                            <div class="dw">
+                                <%=ret[i].department%>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="fr shc"><a href="javascript:;">取消收藏</a></p>
+                </div>
+                <p class="c-txt">
+                    <%=ret[i].extract%>
+                </p>
+                <div class="c-bot clear">
+                    <%for(var j = 0;j < ret[i].tags.length;j++) {%>
+                        <p>
+                            <span>
+                                <%=ret[i].tags[j]%>
+                            </span>
+                        </p>
+                    <%}%>
+                </div>
+            </li>
+        <%}%>
+    </script>
+</body>
+
+</html>

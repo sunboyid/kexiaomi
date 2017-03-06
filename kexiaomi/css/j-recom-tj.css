@@ -1,0 +1,143 @@
+
+
+body{
+    background:#f8f8f8;
+    padding-bottom:2.2rem;
+}
+header{
+    width:92%;
+    font-size:0.6rem;
+    margin:0.5rem 4% 0;
+    border-radius:0.1rem;
+    border:1px solid #69e489;
+}
+.head a{
+    width:33.1%;
+    float:left;
+    color:#69e489;
+    background:#fff;
+    text-align:center;
+    line-height:1.4rem;
+}
+header a:nth-child(2){
+    border-left:1px solid #69e489;
+    border-right:1px solid #69e489;
+}
+header .cur{
+    color:#fff;
+    background:#69e489;
+}
+.tsh{
+    color:#656f83;
+    font-size:0.6rem;
+    padding:0.3rem 0.7rem 0rem;
+}
+.content{
+    margin-top:0.4rem;
+}
+.content li{
+    background:#fff;
+    margin-top:0.3rem;
+}
+.c-top{
+    padding:0 4%;
+}
+.h-top{
+    padding:0.1rem 0 0.5rem;
+}
+.tx{
+    width:1.5rem;
+    height:1.5rem;
+    margin-top:0.2rem;
+    margin-right:0.4rem;
+    display:inline-block;
+}
+.name{
+    color:#ddd;
+    font-size:0.5rem;
+    display:inline-block;
+}
+.name span{
+    display:inline-block;
+}
+.user{
+    width:2rem;
+    color:#656f83;
+    vertical-align:bottom;
+    font-size:0.6rem;
+    white-space:nowrap; 
+    overflow:hidden; 
+    text-overflow:ellipsis;
+}
+.degree{
+    color:#ddd;
+    font-size:0.5rem;
+    vertical-align:bottom;
+}
+.dw{
+    color:#ddd;
+    font-size:0.5rem;
+    line-height:1rem;
+    margin-top:-0.2rem;
+}
+.shc{
+    color:#6ae489;
+    font-size:0.5rem;
+    margin-top:0.8rem;
+    padding:1px 3px 0;
+    border:1px solid #6ae489;
+}
+.c-txt{
+    margin:0 4%;
+    color:#a6a6a6;
+    font-size:0.4rem;
+    padding-bottom:0.5rem;
+    border-bottom:1px solid #f1f1f1;
+}
+.c-bot {
+    width: 100%;
+    color: #6ae489;
+    font-size: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.c-bot a {
+    color: #6ae489;
+}
+
+.c-bot p {
+    float: left;
+    margin: 4% 0 0 4%;
+    padding: 0 0.5rem;
+    line-height: 1.2rem;
+    text-align: center;
+    border-radius: 1rem;
+    display: inline-block;
+    border: 1px solid #6ae489;
+}
+footer{
+    left:0;
+    bottom:0;
+    width:100%;
+    height:1.8rem;
+    position:fixed;
+    background:#fff;
+    font-size:0.6rem;
+    box-shadow:0.1rem 0.1rem 0.2rem #666;
+}
+footer .favo{
+    width:35%;
+    color:#69e489;
+    text-align:center;
+    line-height:1.8rem;
+}
+.sub{
+    display: inline-block;
+    width:65%;
+    color:#fff;
+    height:1.8rem;
+    line-height: 1.8rem;
+    text-align: center;
+    font-size:0.6rem;
+    background:#69e489;
+}

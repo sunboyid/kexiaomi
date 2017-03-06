@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>手机验证登录</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script>
+    document.getElementsByTagName("html")[0].style.fontSize = document.documentElement.clientWidth / 15 + "px";
+    </script>
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../css/d-yzentry.css">
+</head>
+
+<body>
+    <header id="header">
+        <img src="../imgs/logo.png">
+        <span>KEXIAOMI</span>
+    </header>
+    <section>
+        <div class="pub">
+            <div class="pic"><img src="../imgs/phone.png" alt=""></div>
+            <input type="tel" placeholder="请输入手机号" id="mobile">
+        </div>
+        <div class="pub">
+            <div class="pic"><img src="../imgs/key.png" alt=""></div>
+            <input type="number" placeholder="请输入验证码" class="check">
+            <a href="#" id="check">获取验证码</a>
+        </div>
+        <div class="ent-msg">如果您的手机注册过科小觅账号,可用手机验证码登录(适用于手机账号联系人)</div>
+        <div class="ent"><a href="#" id="ent">登&nbsp;&nbsp;&nbsp;&nbsp;录</a></div>
+        <div class="ent register"><a href="105-注册提供者.html">注&nbsp;&nbsp;&nbsp;&nbsp;册</a></div>
+    </section>
+    <footer>
+        <a href="101-登陆.html"><span>切换到账号密码登录</span></a>
+
+    </footer>
+</body>
+<script src="../js/jquery-3.0.0.min.js"></script>
+<script src="../js/jquery.cookie.js"></script>
+<script src="../js/phone-entry.js"></script>
+</html>

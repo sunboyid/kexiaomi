@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>所在单位</title>
+    <script>
+    document.getElementsByTagName("html")[0].style.fontSize = document.documentElement.clientWidth / 15 + "px";
+    </script>
+    <link rel="stylesheet" type="text/css" href="../css/public.css" />
+    <style type="text/css">
+    body {
+        background: #f9f8f9;
+    }
+    
+    .cont {
+        padding: 0 0.5rem;
+    }
+    
+    .tit {
+        color: #656f8a;
+        font-size: 0.6rem;
+        padding: 0.5rem 0;
+    }
+    
+    .tit span {
+        color: #6ae489;
+        font-size: 0.54rem;
+    }
+    
+    .num {
+        width: 94%;
+        padding: 0 3%;
+        height: 1.4rem;
+        color: #656f8a;
+        font-size: 0.56rem;
+        border: 1px solid #ebf0f4;
+    }
+    
+    .num::-webkit-input-placeholder {
+        color: #656f8a;
+    }
+    
+    .text {
+        color: #6ae489;
+        font-size: 0.5rem;
+        padding: 0.5rem 0;
+    }
+    
+    .btn {
+        margin-top: 0.5rem;
+    }
+    
+    .skip {
+        width: 40%;
+        color: #6ae489;
+        font-size: 0.6rem;
+        text-align: center;
+        line-height: 1.4rem;
+        border: 1px solid #6ae489;
+        border-radius: 0.08rem;
+    }
+    
+    .btn .up {
+        width: 55%;
+        color: #fff;
+        font-size: 0.6rem;
+        text-align: center;
+        background: #6ae489;
+        line-height: 1.4rem;
+        border: 1px solid #6ae489;
+    }
+    
+    .file {
+        margin-left: 18%;
+        width: 40%;
+        position: relative;
+        display: inline-block;
+        background: #6ae489;
+        border: 1px solid #99D3F5;
+        border-radius: 0.08rem;
+        overflow: hidden;
+        color: #fff;
+        text-align: center;
+        text-indent: 0;
+        line-height: 1.4rem;
+        font-size: 0.6rem;
+    }
+    
+    .file input {
+        height: 1.4rem;
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 0;
+        opacity: 0;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="cont">
+        <div class="tit">
+            所在单位 <span>北京泰合志新软件有限公司</span>
+        </div>
+        <form name="postForm" id="postForm" action="http://kexiaomi.com/api/wechat/verify-enp" method="post" enctype="multipart/form-data" target="postForm">
+            <input type="number" class="num" placeholder="营业执照编号" name="license_num" value=""/>
+            <div class="text">
+                您的单位还未认证，认证单位后您的需求将成为置信需求
+            </div>
+            <div class="btn clear">
+                <a href="#" class="fl skip">跳过</a>
+                <a href="javascript:;" class="file">
+                    <input type="file" class="fr" name="files" value="">营业执照上传
+                </a>
+            </div>
+            <iframe name="postForm" id="postForm" style="display:none;"></iframe>
+        </form>
+    </div>
+</body>
+</html>
+<script src="../js/zepto.min.js"></script>
+<script>
+$(function() {
+    $('.fr').on('change', function() {
+        if ($('.fr').val() != '') {
+            alert('上传成功');
+            $('form').submit();
+            alert('请等待验证,24小时内小觅将给您回应');
+        }
+    })
+})
+</script>

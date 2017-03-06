@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>回应</title>
+    <script>
+    document.getElementsByTagName("html")[0].style.fontSize = document.documentElement.clientWidth / 15 + "px";
+    </script>
+    <link rel="stylesheet" type="text/css" href="../css/public.css" />
+    <link rel="stylesheet" type="text/css" href="../css/j-respond.css" />
+    <style type="text/css">
+    .jz {
+        margin-top: 50%;
+        text-align: center;
+        font-size: 0.5rem;
+    }
+    
+    .btn p {
+        color: #fff;
+        padding: 0 0.1rem;
+        font-size: 0.5rem;
+        text-align: center;
+        margin-top: 0.8rem;
+        line-height: 0.8rem;
+        background: #6ae489;
+        display: inline-block;
+        border: 1px solid #6ae489;
+        position: absolute;
+        right: 0.5rem;
+    }
+    
+    .c-bot {
+        width: 100%;
+        color: #6ae489;
+        font-size: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+    
+    .c-bot span {
+        color: #6ae489;
+    }
+    
+    .c-bot p {
+        float: left;
+        margin: 4% 0 0 4%;
+        padding: 0 0.5rem;
+        line-height: 1.2rem;
+        text-align: center;
+        border-radius: 1rem;
+        display: inline-block;
+        border: 1px solid #6ae489;
+    }
+    </style>
+</head>
+
+<body>
+    <header class="clear head">
+        <a external href="javascript:;" class="xqmsg">需求信息</a>
+        <a external href="javascript:;" class="mtj">推荐</a>
+        <a external href="207-回应.html" class="cur">响应</a>
+    </header>
+    <div class="main">
+        <div class="jz">努力加载中...</div>
+    </div>
+    <div class="mc"></div>
+    <div class="tk">
+        <div class="txt">
+            <div class="txt-top">仅需<span>100</span>元，知道他是谁，还可以：</div>
+            <div class="txt-center">
+                无限次给他捎话（网页版）
+                <br/> 他参加的活动通知我
+            </div>
+            <div class="txt-bot">
+                您的账户有代金券 <span>500</span>元
+            </div>
+        </div>
+        <div class="tk-but clear">
+            <input type="button" class="fl but" value="支付查看" />
+            <input type="submit" class="fr sub" value="不看" />
+        </div>
+    </div>
+</body>
+
+</html>
+<script type="text/javascript" src="../js/jquery-3.0.0.min.js"></script>
+<script src="../js/jquery.cookie.js"></script>
+<script src="../js/template-native.js"></script>
+<script src="../js/j-respond.js"></script>
+<script type="text/html" id="respond">
+    <div class="tit">
+        <div class="t-top">
+            <%=ret.rq_name%>
+        </div>
+        <div class="t-bot">
+            已经给 <span><%=ret.send%></span> 个专家发送需求 <span><%=ret.receive%></span> 个回应
+        </div>
+    </div>
+    <ul class="content">
+        <%for(var i = 0;i < ret.items.length;i++) {%>
+            <%var item = ret.items[i]%>
+                <%if(item.is_seen){%>
+                    <li>
+                        <div class="c-top clear">
+                            <div class="fl h-top clear">
+                                <img src="<%=item.photo_path%>" alt="" class="fl tx" />
+                                <div class="fl p-info">
+                                    <div class="name">
+                                        <span class="user"><%=item.name%></span> /
+                                        <%=item.title%>
+                                    </div>
+                                    <div class="dw">
+                                        所在地 <span><%=item.department%></span>
+                                    </div>
+                                    <div class="respond">
+                                        回应 <span> <%=item.respose_time%></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fr btn">
+                                <p id="zx">付费咨询</p>
+                            </div>
+                        </div>
+                        <p class="c-txt">
+                            <%=item.extract%>
+                        </p>
+                        <div class="c-bot clear">
+                            <%for(var j = 0;j < item.tags.length;j++) {%>
+                                <p>
+                                    <span>
+                                        <%=item.tags[j]%>
+                                    </span>
+                                </p>
+                            <%}%>
+                        </div>
+                    </li>
+                    <%}else {%>
+                        <li>
+                            <div class="c-top clear">
+                                <div class="fl h-top clear">
+                                    <img src="<%=item.photo_path%>" alt="" class="fl tx" />
+                                    <div class="fl p-info">
+                                        <div class="name">
+                                            <span class="user">他</span> /
+                                            <%=item.title%>
+                                        </div>
+                                        <div class="dw">
+                                            所在地 <span><%=item.department%></span>
+                                        </div>
+                                        <div class="respond">
+                                            回应 <span> <%=item.respose_time%></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="fr shc">查看</p>
+                            </div>
+                            <p class="c-txt">
+                                <%=item.extract%>
+                            </p>
+                        </li>
+                    <%}%>
+        <%}%>
+    </ul>
+</script>

@@ -1,0 +1,145 @@
+body {
+    background-color: #f8f8f8;
+}
+
+#header {
+    width: 100%;
+    height: 2.4rem;
+    background-color: #fff;
+    padding-top: 0.5rem;
+    box-sizing: border-box;
+}
+
+#header .head-til {
+    width: 14rem;
+    height: 1.4rem;
+    margin: 0 auto;
+    display: flex;
+    line-height: 1.4rem;
+    text-align: center;
+}
+
+.head-til a {
+    font-size: 0.52rem;
+}
+
+.head-til .res-left {
+    flex: 1;
+    background-color: #fff;
+    border: 1px solid #6ae489;
+}
+
+.res-left a {
+    color: #6ae489;
+}
+
+.head-til .tec-right {
+    flex: 1;
+    background-color:#6ae489;
+    border: 1px solid #6ae489;
+}
+
+.tec-right a {
+    color: #fff;
+}
+
+.content {
+    padding-bottom: 2rem;
+}
+
+section {
+    width: 100%;
+    background-color: #fff;
+    margin-bottom: 0.36rem;
+    padding-bottom: 1rem;
+}
+
+.patent-contain {
+    width: 13.96rem;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.contain-head {
+    width: 100%;
+    padding: 0.5rem 0;
+    box-sizing: border-box;
+    border-bottom: 1px solid #f8f8f8;
+}
+
+.contain-head span {
+    font-weight: 700;
+    font-size: 0.6rem;
+    color: #626f82;
+}
+
+.contain-head a {
+    display: inline-block;
+    color: #e24660;
+    padding: 0 0.2rem;
+    font-size: 0.5rem;
+    margin-top: 0.5rem;
+    float: right;
+    border: 1px solid #e24660;
+}
+
+.contain-mid {
+    width: 100%;
+    height: 3.2rem;
+}
+
+.contain-mid .more {
+    display: inline;
+    color: #6ae489;
+}
+
+.contain-mid p {
+    color: #ccc;
+    font-size: 0.48rem;
+    padding-top: 0.3rem;
+}
+
+.contain-mid span {
+    color: #626f82;
+}
+
+.contain-bottom {
+    width: 100%;
+    height: 1.2rem;
+    text-align: center;
+}
+
+.contain-bottom a {
+    display: inline-block;
+    width: 48%;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    font-size: 0.5rem;
+    border: 1px solid #6ae489;
+    text-align: center;
+}
+
+.contain-bottom .inp-patent {
+    color: #6ae489;
+    background-color: #fff;
+}
+
+.contain-bottom .inp-tec {
+    color: #fff;
+    background-color: #6ae489;
+}
+
+.icon-wujiaoxing-copy {
+    font-size: 0.5rem;
+    color: #6ae489;
+}
+
+.icon-wujiaoxingkong {
+    font-size: 0.5rem;
+    color: #6ae489;
+}
+.jz {
+    font-size: 0.5rem;
+    text-align: center;
+    margin-top:50%;
+}

@@ -1,0 +1,119 @@
+
+
+body{
+    background:#f8f8f8;
+}
+header{
+    width:100%;
+    height:3.1rem;
+    position:relative;
+}
+.bj{
+    width:100%;
+    height:3.1rem;
+    display:block;
+}
+.nav{
+    top:0;
+    left:0;
+    width:100%;
+    height:3.1rem;
+    position:absolute;
+}
+.nav a{
+    float:left;
+    padding:0 0.79rem;
+}
+.nav img{
+    width:2.16rem;
+    height:3.1rem;
+    display:block;
+}
+.list{
+    background:#fff;
+    padding:0 0.5rem;
+    margin-top:0.4rem;
+}
+.list-top{
+    padding:0.3rem 0;
+    border-bottom:1px solid #f1f1f1;
+}
+.xqName{
+    width:6rem;
+    color:#656f83;
+    font-size:0.6rem;
+    display:inline-block;
+    white-space:nowrap; 
+    overflow:hidden; 
+    text-overflow:ellipsis;
+}
+.num{
+    color:#fff;
+    padding: 1px 2px;
+    font-size:0.4rem;
+    line-height:0.5rem;
+    background:#6ae489;
+    vertical-align:middle;
+}
+.list-info{
+    font-size:0.6rem;
+    padding:0.4rem 0;
+}
+.in-left{
+    color:#d4d4d4;
+}
+.in-top .upTime{
+    width:58%;
+    display:inline-block;
+    float: right;
+}
+.in-top .c-person {
+    /*width: 43%;*/
+    display:inline-block;
+    float: left;
+}
+.in-top span{
+    display:inline-block;
+}
+.founderName{
+    width:3.5rem;
+    color:#656f83;
+    vertical-align:top;
+    display:inline-block;
+    white-space:nowrap; 
+    overflow:hidden; 
+    text-overflow:ellipsis;
+}
+.up-time{
+    color:#656f83;
+}
+.in-bot{
+    color:#656f83;
+    margin-top:1px;
+    clear: both;
+}
+.in-bot span{
+    color:#6ae489;
+}
+.new{
+    left:0;
+    bottom:0;
+    width:100%;
+    color:#fff;
+    position:fixed;
+    font-size:0.7rem;
+    text-align:center;
+    line-height:1.8rem;
+    background:#6ae489;
+}
+#content {
+    margin-bottom: 0.5rem;
+}
+.jz {
+    margin-top: 50%;
+    text-align: center;
+    font-size: 0.7rem;
+}
+#page {
+    margin-bottom: 2rem;
+}

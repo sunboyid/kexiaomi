@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>消费记录</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script>
+    document.getElementsByTagName("html")[0].style.fontSize = document.documentElement.clientWidth / 15 + "px";
+    </script>
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../laypage/skin/laypage.css">
+    <link rel="stylesheet" href="../css/m-buy.css">
+</head>
+<style>
+</style>
+
+<body>
+    <div class="content">
+        <div class="jz">努力加载中...</div>
+    </div>
+    <div id="page"></div>
+</body>
+
+</html>
+<script src="../js/jquery-3.0.0.min.js"></script>
+<script src="../js/template-native.js"></script>
+<script src="../laypage/laypage.js"></script>
+<script>
+$(function() {
+    $.ajax({
+        type: 'get',
+        url: 'http://kexiaomi.com/api/my/consume',
+        dataType: 'jsonp',
+        success: function(data) {
+            console.log(data);
+            var info = data.ret;
+            var total = info.total;
+            var nums = 10;
+            var pages = Math.ceil(total / nums);
+            laypage({
+                cont: 'page',
+                pages: pages,
+                curr: 1,
+                skin: '#69e489',
+                groups: 3,
+                jump: function(e) {
+                    $.ajax({
+                        type: 'get',
+                        url: 'http://kexiaomi.com/api/my/consume?page=' + e.curr,
+                        dataType: 'jsonp',
+                        success: function(data) {
+                            var record = template('record', info);
+                            $('.content').html(record);
+                        }
+                    })
+                }
+            })
+        }
+    })
+})
+</script>
+<script type="text/html" id="record">
+    <%for(var i = 0;i < items.length;i++) {%>
+        <section>
+            <div class="top">
+                <div class="d-left">
+                    <%=items[i].name%>
+                </div>
+                <div class="num-mid">
+                    <%=items[i].score_change%>
+                </div>
+                <div class="num-jf">
+                    <%=items[i].score_left%>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="date">
+                    <%=items[i].date%> 今天</div>
+                <div class="jf-change">积分变化</div>
+                <div class="jf-right">剩余积分</div>
+            </div>
+        </section>
+    <%}%>
+</script>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>推荐研究者</title>
+    <script>
+    document.getElementsByTagName("html")[0].style.fontSize = document.documentElement.clientWidth / 15 + "px";
+    </script>
+    <link rel="stylesheet" type="text/css" href="../css/public.css" />
+    <link rel="stylesheet" type="text/css" href="../css/j-recom-tj.css" />
+    <style type="text/css">
+    .jz {
+        margin-top: 50%;
+        text-align: center;
+        font-size: 0.5rem;
+    }
+    
+    .tsh {
+        font-size: 0.7rem;
+    }
+    </style>
+</head>
+
+<body>
+    <header class="clear head">
+        <a external href="206-1-需求详情.html" class="xq-msg">需求信息</a>
+        <a external href="210-2-需求详情.html" class="cur">推荐</a>
+        <a external href="javascript:;" class="respond">响应</a>
+    </header>
+    <div class="tsh"></div>
+    <ul class="content">
+        <div class="jz">努力加载中...</div>
+    </ul>
+    <footer class="clear">
+        <a class="fl favo" href="../myxm/401-收藏-1.html">收藏夹</a>
+        <input class="fr sub" type="submit" value="验证需求" />
+    </footer>
+</body>
+
+</html>
+<script type="text/javascript" src="../js/jquery-3.0.0.min.js"></script>
+<script src="../js/jquery.cookie.js"></script>
+<script src="../js/template-native.js"></script>
+<script src="../js/j-recom-tj2.js"></script>
+
+<script type="text/html" id="tj-res">
+    <%for(var i = 0;i < list.length;i++) {%>
+        <li>
+            <div class="c-top clear">
+                <div class="fl h-top clear">
+                    <img src="<%=list[i].photo_path%>" alt="" class="fl tx" />
+                    <div class="fl p-info">
+                        <div class="name">
+                            <span class="user"><%=list[i].name%></span> /
+                            <%=list[i].title%>
+                        </div>
+                        <div class="dw">
+                            <%=list[i].department%>
+                        </div>
+                    </div>
+                </div>
+                <p class="fr shc">收藏</p>
+            </div>
+            <p class="c-txt">
+                <%=list[i].extract%>
+            </p>
+            <div class="c-bot clear">
+                <%for(var j = 0;j < list[i].tags.length;j++) {%>
+                    <p>
+                        <a href="#">
+                            <%=list[i].tags[j]%>
+                        </a>
+                    </p>
+                <%}%>
+            </div>
+        </li>
+        <%}%>
+</script>

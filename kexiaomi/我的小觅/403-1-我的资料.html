@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>我的资料</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script>
+    document.getElementsByTagName("html")[0].style.fontSize = document.documentElement.clientWidth / 15 + "px";
+    </script>
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../font/iconfont.css">
+    <link rel="stylesheet" href="../css/m-msg.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="jz">努力加载中...</div>
+</body>
+<script src="../js/zepto.min.js"></script>
+<script src="../js/touch.js"></script>
+<script src="../js/template-native.js"></script>
+<script>
+$(function() {
+    $.ajax({
+        type: 'get',
+        url: 'http://kexiaomi.com/api/my/data',
+        dataType: 'jsonp',
+        timeout: 6000,
+        success: function(data) {
+            console.log(data);
+            if (data.code == -10) {
+                window.location.href = '../登陆注册/101-登录.html';
+            } else {
+                var myInfo = template('my-Info', data);
+                $('body').html(myInfo);
+                $('body').on('tap', '.del', function() {
+                    $(this).parent('div').remove();
+                })
+            }
+        },
+        error: function() {
+            alter('请求超时，请重新加载');
+        }
+    })
+})
+</script>
+<script type="text/html" id="my-Info">
+    <div class="head-content">
+        <header id="header">
+            <span>头像</span>
+            <img src="<%=ret.photo_path%>" alt="">
+            <i class="iconfont icon-202-copy icon-head"></i>
+        </header>
+        <section>
+            <span>姓名</span>
+            <div>
+                <span><%=ret.name%></span>&nbsp;
+                <i class="iconfont icon-202-copy"></i>
+            </div>
+        </section>
+        <section>
+            <span>职称</span>
+            <div>
+                <span><%=ret.head%></span>&nbsp;
+                <i class="iconfont icon-202-copy"></i>
+            </div>
+        </section>
+        <section>
+            <span>单位</span>
+            <div>
+                <span><%=ret.department%></span>&nbsp;
+                <i class="iconfont icon-202-copy"></i>
+            </div>
+        </section>
+        <section>
+            <span>邮箱</span>
+            <div>
+                <span><%=ret.email%></span>&nbsp;
+                <i class="iconfont icon-202-copy"></i>
+            </div>
+        </section>
+        <section>
+            <span>电话</span>
+            <div>
+                <span><%=ret.phone%></span>&nbsp;
+                <i class="iconfont icon-202-copy"></i>
+            </div>
+        </section>
+    </div>
+    <div class="m-intro">
+        <div class="intro-head">自我介绍</div>
+        <textarea placeholder="">
+            <%=ret.extract%>
+        </textarea>
+    </div>
+    <div class="m-intro">
+        <div class="intro-head">标签</div>
+        <div class="title-content">
+            <%for(var i = 0;i < ret.tags.length;i++) {%>
+                <div class="content-pub">
+                    <span><%=ret.tags[i]%></span>
+                    <img src="../imgs/m-bz.png" alt="">
+                </div>
+                <%}%>
+                    <div class="content-pub m-add">
+                        <i class="iconfont icon-plus-tow"></i>
+                    </div>
+        </div>
+    </div>
+    <div class="m-intro">
+        <div class="intro-head result">成果
+            <a href="#">录入成果</a>
+        </div>
+        <div class="result-content">
+            <%for(var j = 0;j < ret.achievement.length;j++) {%>
+                <div>
+                    <%=ret.achievement[j]%><span class="del">删除</span>
+                </div>
+            <%}%>
+        </div>
+    </div>
+</script>
+
+</html>
